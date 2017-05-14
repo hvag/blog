@@ -6,8 +6,6 @@ permalink: /about/
 
 What's Happening at HVAG!
 
-### More Information
-
 
 ### Contact
 
