@@ -120,6 +120,12 @@ img {
   color: $gray;
 }
 
+.hvag-date {
+  font-style: italic;
+  font-size: 80%;
+  color: $gray;
+}
+
 // Specify the color of the selection
 ::-moz-selection {
   color: $black;
