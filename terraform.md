@@ -4,7 +4,7 @@ title: Terraform
 permalink: /terraform/
 ---
 
-Let's use Terraform to create a bit of new infrastructure [This doc is a work in progress.  Check back for updates.]
+Let's use Terraform to create a bit of new infrastructure - This doc is a work in progress.  Check back for updates.
 
 -
 ### 1. Purpose
@@ -38,3 +38,5 @@ NA
 
 -
 ### 7. Make it so
+
+Let's start our build with AWS.  Why AWS?  Why not AWS; besides, AWS is the space where I know I can produce a quick win.
