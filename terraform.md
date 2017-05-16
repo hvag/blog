@@ -46,3 +46,7 @@ Let's start our build with AWS.  Why AWS?  Why not AWS; besides, AWS is the spac
 I open my eyes.  I'm standing in, a void.  Not darkness, light, like a completely clean sheet of paper.  A cube, a sphere, a cloud, unknown, the edges are unseen, they extend beyond.
 
 I need something.  I need my own space within the space.  A VPC.
+
+* Open a terminal session
+* Create a new working directory to contain the Terraform files.  Oh, wait a minute.  No, let's set up a GitHub repository, we're going to want to share and have version control.  I create a new GitHub repository tf-demo, it's Public and Initialized with a README.  Note to self, **do not add any 'secrets' to this repo**.
+
