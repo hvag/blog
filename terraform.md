@@ -51,5 +51,5 @@ I need something.  I need my own space within the space.  A VPC.
   
 * Create a new working directory to contain the Terraform files.  Oh, wait a minute.  No, let's set up a GitHub repository, we're going to want to share and have version control.  I create a new GitHub repository tf-demo, it's Public and Initialized with a README.  Note to self, **do not add any 'secrets' to this repo**.
 
-* I clone the repo with 'git clone https://hvag@github.com/hvag/tf-demo.git'
+* I clone the repo with `git clone https://hvag@github.com/hvag/tf-demo.git`
 
