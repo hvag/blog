@@ -88,9 +88,6 @@ Yikes, one of the paradigms of coding (_at least I think it's a paradigm, let's 
 
 Hmm, lemme think about that.  Remember, feel free to send me your ideas ...
 
-
-
-
-
+...
 
 
