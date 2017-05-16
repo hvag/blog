@@ -81,7 +81,10 @@ Initial plan was to create a VPC. A, as in singular.  Yes, a region is made up o
 
 ## DRY - Don't repeat yourself
 
-Yikes, one of the paradigms of coding (_at least I think it's a paridigm, let's go with it_) is that one ought not repeat one's sself.
+Yikes, one of the paradigms of coding (_at least I think it's a paradigm, let's go with it_) is that one ought not repeat one's sself.  I'm creating two VPCs but I really ought to code it just once.
+
+Hmm, lemme think about that.  Remember, feel free to send me your ideas ...
+
 
 
 
