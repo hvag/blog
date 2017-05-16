@@ -65,5 +65,8 @@ I have my terminal session, I have my AWS account, I have the AWS CI installed. 
     
 Let's see if that worked
 
-	$ aws s3 ls
+	$ aws ec2 describe-regions
+    
+Did you get a list of AWS regions?  Excellent.
+
 
