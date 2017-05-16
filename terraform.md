@@ -55,6 +55,8 @@ I need something.  I need my own space within the space.  A VPC.
   
 * Create a new working directory to contain the Terraform files.  Oh, wait a minute.  No, let's set up a GitHub repository, we're going to want to share and have version control.  I create a new GitHub repository tf-demo, it's Public and Initialized with a README.  Note to self, **do not add any 'secrets' to this repo**.
 
+  Tip:  Highly recommend, protect both your AWS and GitHub accounts with two-factor authentication.  Actually, you ought to protect all your accounts with two-factor authentication.
+
 * I clone the repo with: `git clone https://hvag@github.com/hvag/tf-demo.git`
 
 I have my terminal session, I have my AWS account, I have the AWS CI installed.  Let's tie them together.  From within the tf-demo directory created via git clone, perform the following:
@@ -81,7 +83,7 @@ Initial plan was to create a VPC. A, as in singular.  Yes, a region is made up o
 
 ## DRY - Don't repeat yourself
 
-Yikes, one of the paradigms of coding (_at least I think it's a paradigm, let's go with it_) is that one ought not repeat one's sself.  I'm creating two VPCs but I really ought to code it just once.
+Yikes, one of the paradigms of coding (_at least I think it's a paradigm, let's go with it_) is that one ought not repeat one's self.  I'm creating two VPCs but I really ought to code it just once.
 
 Hmm, lemme think about that.  Remember, feel free to send me your ideas ...
 
