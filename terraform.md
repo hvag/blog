@@ -57,16 +57,24 @@ I need something.  I need my own space within the space.  A VPC.
 
 * I clone the repo with: `git clone https://hvag@github.com/hvag/tf-demo.git`
 
-I have my terminal session, I have my AWS account, I have the AWS CI installed.  Let's tie them together.
+I have my terminal session, I have my AWS account, I have the AWS CI installed.  Let's tie them together.  From within the tf-demo directory created via git clone, perform the following:
 
 	$ export AWS_ACCESS_KEY_ID=**********
 	$ export AWS_SECRET_ACCESS_KEY=********************
 	$ export AWS_DEFAULT_REGION=us-east-1
     
-Let's see if that worked
+Let's check status:
 
 	$ aws ec2 describe-regions
     
 Did you get a list of AWS regions?  Excellent.
+
+## Infrastructure as Code
+If only all infrastructure could be code.  Sure, it eventually has to run on something, but having your infrastructure just be a manifestation, an instantiation of your idea or ideal; isn't that interesting?
+
+Interestingly enough, once you start down this path, you will eventually hit an inflection point at which it will be simplier to decipher infrastructure by examing the code vs. clicking through a console.  As with everything, just takes a bit of practice.
+
+
+
 
 
