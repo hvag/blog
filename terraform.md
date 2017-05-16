@@ -47,7 +47,9 @@ I open my eyes.  I'm standing in, a void.  Not darkness, light, like a completel
 
 I need something.  I need my own space within the space.  A VPC.
 
-	* Open a terminal session
+* Open a terminal session
   
-	* Create a new working directory to contain the Terraform files.  Oh, wait a minute.  No, let's set up a GitHub repository, we're going to want to share and have version control.  I create a new GitHub repository tf-demo, it's Public and Initialized with a README.  Note to self, **do not add any 'secrets' to this repo**.
+* Create a new working directory to contain the Terraform files.  Oh, wait a minute.  No, let's set up a GitHub repository, we're going to want to share and have version control.  I create a new GitHub repository tf-demo, it's Public and Initialized with a README.  Note to self, **do not add any 'secrets' to this repo**.
+
+* I clone the repo with 'git clone https://hvag@github.com/hvag/tf-demo.git'
 
