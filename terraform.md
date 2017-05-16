@@ -1,8 +1,9 @@
 ---
-layout: page
+layout: page-disqus
 title: Terraform
 permalink: /terraform/
 published: true
+comments: true
 ---
 
 Let's use Terraform to create a bit of new infrastructure - This doc is a work in progress.  Check back for updates.  Follow progress on twitter: 
