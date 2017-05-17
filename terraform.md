@@ -140,7 +140,7 @@ Create a 'modules' subdirectory as a container for the modules.  Create a vpc su
 
 #### vars.tf
 
-```
+```ruby
 variable "region" {
     description = "In which AWS region should the VPC be created"
 }
@@ -156,7 +156,7 @@ variable "cidr_block" {
 
 #### module-vpc.tf
 
-```
+```ruby
 provider "aws" {
       region = "${var.region}"
 }
@@ -178,7 +178,7 @@ resource "aws_vpc" "TF-DEMO" {
 
 #### outputs.tf
 
-```
+```ruby
 output "vpc_name" {
     value = "${aws_vpc.TF-DEMO.name}"
 }
