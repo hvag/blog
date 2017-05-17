@@ -108,11 +108,12 @@ Terraform utilizes state files to track the current state of the deployed infras
 	```ruby
     terraform {
         backend "s3" {
-            bucket = "hvag-tfdemo-state"
-            key    = "terraform.tfstate"
-            region = "us-east-1"
+            bucket  = "hvag-tfdemo-state"
+            region  = "us-east-1"
+            key     = "terraform.tfstate"
+            encrypt = "true"
         }
-	}
+    }
     ```
     
 3. Run ```terraform init``` to configure the backend for use
