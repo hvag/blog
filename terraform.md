@@ -81,6 +81,30 @@ Interestingly enough, once you start down this path, you will eventually hit an 
 
 Initial plan was to create a VPC. A, as in singular.  Yes, a region is made up of multiple availability zones, but hey, we're conceptualizing, why not have the capability to have redundancy via different geographic regions?  I say we build one VPC on the east coast and one VPC on the west coast.  We can revisit later to discuss being globally distributed.  Think about it this way, we're going to construct infrastructure comprised of a Data Center (DC) in northern Virginia and a DC in northern California.  For redundancy, each DC will be comprised of multiple physical rooms spread across large campuses.  Each room will be independent, highly redundant and connected on each campus via a high-speed network.
 
+## Terraform State
+
+Terraform utilizes state files to track the current state of the deployed infrastructure.  The state file is a JSON representation of all the objects currently under Terraform control.  Terraform allows us to utilze a 'backend' store to keep the state files in a centralized location and acessable to multiple developers.  For our demonstration, we will utilize AWS S3 as the backend.
+
+1. Create a S3 bucket as a container for the Terraform state files and enable versioning:  
+
+	```
+    aws s3api create-bucket --bucket hvag-tfdemo-state --region us-east-1
+    
+    aws s3api put-bucket-versioning --bucket hvag-tfdemo-state --versioning-configuration Status=Enabled
+    ```
+
+2. Create a file **s3-backend.tf** in the tf-demo folder
+
+	```ruby
+    terraform {
+        backend "s3" {
+            bucket = "hvag-tfdemo-terraform-state"
+            key    = "vpc/terraform.tfstate"
+            region = "us-east-1"
+        }
+	}
+    ```
+
 
 ## DRY - Don't repeat yourself
 
