@@ -97,7 +97,7 @@ Initial plan was to create a VPC. A, as in singular.  Yes, a region is made up o
 Terraform utilizes state files to track the current state of the deployed infrastructure. The state file is a JSON representation of all the objects currently under Terraform control. Terraform allows us to utilize a ‘backend’ store to keep the state files in a centralized location and accessible to multiple developers. For our demonstration, we will utilize AWS S3 as the backend.
 
 
-1. Create a S3 bucket as a container for the Terraform state files and enable versioning:  
+1. Create a S3 bucket as a container for the Terraform state files and enable versioning.  
 
 	```
     aws s3api create-bucket --bucket hvag-tfdemo-state --region us-east-1
@@ -105,7 +105,7 @@ Terraform utilizes state files to track the current state of the deployed infras
     aws s3api put-bucket-versioning --bucket hvag-tfdemo-state --versioning-configuration Status=Enabled
     ```
 
-2. Create a file **s3-backend.tf** in the tf-demo folder
+2. Create a file **s3-backend.tf** in the tf-demo folder.
 
 	```ruby
     terraform {
@@ -118,7 +118,7 @@ Terraform utilizes state files to track the current state of the deployed infras
     }
     ```
     
-3. Run ```terraform init``` to configure the backend for use
+3. Run ```terraform init``` to configure the backend for use.
 
 
 ## DRY - Don't repeat yourself
