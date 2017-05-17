@@ -123,7 +123,67 @@ Terraform utilizes state files to track the current state of the deployed infras
 
 Yikes, one of the paradigms of coding (_at least I think it's a paradigm, let's go with it_) is that one ought not repeat one's self.  I'm creating two VPCs but I really ought to code it just once.
 
-Hmm, lemme think about that.  Remember, feel free to send me your ideas ...
+
+## Terrafrom Module
+
+To achieve code reusability, we will utilize Terraform modules.
+
+Create a 'modules' subdirectory as a container for the modules.  Create a vpc subdirectory in modules.  Our directory now looks like this:
+
+```
+|____modules
+| |____vpc
+| | |____module-vpc.tf
+| | |____outputs.tf
+| | |____vars.tf
+```
+
+#### vars.tf
+
+```
+variable "region" {
+    description = "In which AWS region should the VPC be created"
+}
+
+variable "name" {
+    description = "Name of the VPC"
+}
+
+variable "cidr_block" {
+    description = "VPC CIDR"
+}
+```
+
+#### module-vpc.tf
+
+```
+provider "aws" {
+      region = "${var.region}"
+}
+
+
+# Create VPC
+resource "aws_vpc" "TF-DEMO" {
+    cidr_block = "${var.cidr_block}"
+
+    instance_tenancy = "default"
+    enable_dns_support = true
+    enable_dns_hostnames = true
+
+    tags {
+        Name = "${var.name}"
+    }
+}
+```
+
+#### outputs.tf
+
+```
+output "vpc_name" {
+    value = "${aws_vpc.TF-DEMO.name}"
+}
+```
+
 
 ...
 
