@@ -207,7 +207,7 @@ module "vpc-west" {
 }
 ```
 
-Now perform the following:
+- Now perform the following:
 
 ```ruby
 terraform get		<- Get all modules
