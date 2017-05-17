@@ -185,7 +185,7 @@ output "vpc_name" {
 }
 ```
 
-- Create the following files in the tf-demo directory
+- Create the following file in the tf-demo directory
 
 #### vpc-east-tf
 
@@ -197,11 +197,7 @@ module "vpc-east" {
     name       = "VPC-EAST"
     cidr_block = "10.100.0.0/16"
 }
-```
 
-#### vpc-west-tf
-
-```ruby
 module "vpc-west" {
     source = "modules/vpc"
 
@@ -210,8 +206,6 @@ module "vpc-west" {
     cidr_block = "10.200.0.0/16"
 }
 ```
-
-
 
 ...
 
