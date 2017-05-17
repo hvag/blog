@@ -126,7 +126,7 @@ Terraform utilizes state files to track the current state of the deployed infras
 Yikes, one of the paradigms of coding (_at least I think it's a paradigm, let's go with it_) is that one ought to not repeat one's self.  I'm creating two VPCs but I really ought to code it just once.
 
 
-## Terrafrorm Module
+## Terraform Module
 
 To achieve code reusability, we will utilize Terraform modules.
 
@@ -209,11 +209,17 @@ module "vpc-west" {
 
 Now perform the following:
 
-``` ruby
+```ruby
 terraform get		<- Get all modules
 terraform plan		<- Show the execution plan
 terraform apply		<- Build or change infrastructure
 ```
+
+And with that, we have completed the first item in our backlog.  We have code that will "present" two geographically dispersed data centers.
+
+And, speaking of plan, would now be the time to step back and produce an overall design for the desired end-state?  I say no, that would be so "waterfall-ly".  Let's be agile, we'll plan short sprints with frequent builds working through our backlog of user stories.
+
+Just because we can, lets run `terraform destroy` to blow-up the DCs.  We can run `terraform apply` at any time to recreate them.
 
 ...
 
