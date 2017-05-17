@@ -56,7 +56,7 @@ I need something.  I need my own space within the space.  A VPC.
   
 * Create a new working directory to contain the Terraform files.  Oh, wait a minute.  No, let's set up a GitHub repository, we're going to want to share and have version control.  I create a new GitHub repository tf-demo, it's Public and Initialized with a README.  Note to self, **do not add any 'secrets' to this repo**.
 
-  :+1: **Tip**:  Highly recommend, protect both your AWS and GitHub accounts with two-factor authentication.  Actually, you ought to protect all your accounts with two-factor authentication.
+  :idea: **Tip**:  Highly recommend, protect both your AWS and GitHub accounts with two-factor authentication.  Actually, you ought to protect all your accounts with two-factor authentication.
 
 * Clone the repo:  
 	`git clone https://hvag@github.com/hvag/tf-demo.git`
