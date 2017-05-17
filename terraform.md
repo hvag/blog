@@ -187,7 +187,7 @@ output "vpc_name" {
 
 - Create the following file in the tf-demo directory
 
-#### vpc-east-tf
+#### vpc-tf
 
 ```ruby
 module "vpc-east" {
@@ -205,6 +205,14 @@ module "vpc-west" {
     name       = "VPC-WEST"
     cidr_block = "10.200.0.0/16"
 }
+```
+
+Now perform the following:
+
+``` ruby
+terraform get		<- Get all modules
+terraform plan		<- Show the execution plan
+terraform apply		<- Build or change infrastructure
 ```
 
 ...
