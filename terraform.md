@@ -185,6 +185,7 @@ output "vpc_name" {
 ```
 
 - Create the following files in the tf-demo directory
+
 #### vpc-east-tf
 
 ```ruby
