@@ -129,7 +129,7 @@ Yikes, one of the paradigms of coding (_at least I think it's a paradigm, let's 
 
 To achieve code reusability, we will utilize Terraform modules.
 
-Create a 'modules' subdirectory as a container for the modules.  Create a vpc subdirectory in modules.  Our directory now looks like this:
+- Create a 'modules' subdirectory as a container for the modules.  Create a vpc subdirectory in modules.  Our directory now looks like this:
 
 ```
 |____modules
@@ -183,6 +183,32 @@ output "vpc_name" {
     value = "${aws_vpc.TF-DEMO.name}"
 }
 ```
+
+- Create the following files in the tf-demo directory
+#### vpc-east-tf
+
+```ruby
+module "vpc-east" {
+    source = "modules/vpc"
+
+    region     = "us-east-1"
+    name       = "VPC-EAST"
+    cidr_block = "10.100.0.0/16"
+}
+```
+
+#### vpc-west-tf
+
+```ruby
+module "vpc-west" {
+    source = "modules/vpc"
+
+    region     = "us-west-1"
+    name       = "VPC-WEST"
+    cidr_block = "10.200.0.0/16"
+}
+```
+
 
 
 ...
