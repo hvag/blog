@@ -68,6 +68,7 @@ I need something.  I need my own space within the space.  A VPC.
 
 .terraform
 *.key
+terraform.tfstate.*
 ```
 
 I have my terminal session, I have my AWS account, I have the AWS CI installed.  Let's tie them together.  From within the tf-demo directory created via git clone, perform the following:
