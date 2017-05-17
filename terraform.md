@@ -85,7 +85,7 @@ Did you get a list of AWS regions?  Excellent.
 ## Infrastructure as Code
 If only all infrastructure could be code.  Sure, it eventually has to run on something, but having your infrastructure just be a manifestation, an instantiation of your idea or ideal; isn't that interesting?
 
-Interestingly enough, once you start down this path, you will eventually hit an inflection point at which it will be simplier to decipher infrastructure by examing the code vs. clicking through a console.  As with everything, just takes a bit of practice. Yep, we're talking 'bout practice!
+Interestingly enough, once you start down this path, you will eventually hit an inflection point at which it will be simpler to decipher infrastructure by examining the code vs. clicking through a console. As with everything, just takes a bit of practice. Yep, we’re talking ‘bout practice!
 
 ## VPC
 
@@ -93,7 +93,8 @@ Initial plan was to create a VPC. A, as in singular.  Yes, a region is made up o
 
 ## Terraform State
 
-Terraform utilizes state files to track the current state of the deployed infrastructure.  The state file is a JSON representation of all the objects currently under Terraform control.  Terraform allows us to utilze a 'backend' store to keep the state files in a centralized location and acessable to multiple developers.  For our demonstration, we will utilize AWS S3 as the backend.
+Terraform utilizes state files to track the current state of the deployed infrastructure. The state file is a JSON representation of all the objects currently under Terraform control. Terraform allows us to utilize a ‘backend’ store to keep the state files in a centralized location and accessible to multiple developers. For our demonstration, we will utilize AWS S3 as the backend.
+
 
 1. Create a S3 bucket as a container for the Terraform state files and enable versioning:  
 
@@ -121,10 +122,10 @@ Terraform utilizes state files to track the current state of the deployed infras
 
 ## DRY - Don't repeat yourself
 
-Yikes, one of the paradigms of coding (_at least I think it's a paradigm, let's go with it_) is that one ought not repeat one's self.  I'm creating two VPCs but I really ought to code it just once.
+Yikes, one of the paradigms of coding (_at least I think it's a paradigm, let's go with it_) is that one ought to not repeat one's self.  I'm creating two VPCs but I really ought to code it just once.
 
 
-## Terrafrom Module
+## Terrafrorm Module
 
 To achieve code reusability, we will utilize Terraform modules.
 
@@ -160,7 +161,6 @@ variable "cidr_block" {
 provider "aws" {
       region = "${var.region}"
 }
-
 
 # Create VPC
 resource "aws_vpc" "TF-DEMO" {
