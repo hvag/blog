@@ -173,6 +173,7 @@ resource "aws_vpc" "TF-DEMO" {
 
     tags {
         Name = "${var.name}"
+        terraform = "true"
     }
 }
 ```
