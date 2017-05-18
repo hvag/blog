@@ -218,7 +218,7 @@ terraform apply		<- Build or change infrastructure
 
 And with that, we have completed the first item in our backlog.  We have code that will "present" two geographically dispersed data centers.
 
-And, speaking of plan, would now be the time to step back and produce an overall design for the desired end-state?  I say no, that would be so "waterfall-ly".  Let's take a stab at agile. We'll plan short sprints with frequent builds, working through our backlog of user stories.
+And, speaking of plan, would now be the time to step back and produce an overall design for the desired end-state?  I say no, that would be so "waterfall-ly".  Let's take a stab at agile. We'll plan short sprints with frequent builds, generating and working from user stories.
 
 Just because we can, lets run `terraform destroy` to blow-up the DCs.  We can run `terraform apply` at any time to recreate them.  And, with destruction being so easy, lets add user stories regarding controls and recovery capabilities.
 
