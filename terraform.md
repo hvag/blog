@@ -222,6 +222,10 @@ And, speaking of plan, would now be the time to step back and produce an overall
 
 Just because we can, lets run `terraform destroy` to blow-up the DCs.  We can run `terraform apply` at any time to recreate them.  And, with destruction being so easy, lets add user stories regarding controls and recovery capabilities.
 
+## VPC Network
+_Hey, those are nice new buildings we have; can we put computers in them?_  
+_No, we need more stuff_
+
 ...
 
 
