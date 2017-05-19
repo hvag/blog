@@ -428,5 +428,7 @@ Utilizing count and iterating over the injected subnet address lists makes it al
 _I heard that the network was ready, now can I build my server?_  
 _Well, we're not quite there yet; but, the PM says that we can Fast Track!_
 
+Let me know if you have ideas for improving the code above.  I recall that we're supposed to be able to reduce all code blocks by at least one line.  Therefore, given enough responses, we should be able to get this thing down to one line of code.  [@_markshaw](https://twitter.com/_markshaw){:target="_blank"}
+
 
 ...
