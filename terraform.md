@@ -251,4 +251,28 @@ Subnet            | Address Ranges                  | Name
 10.100.248.0/21   | 10.100.248.1 - 10.100.255.254   | VPC-E-R4-Spare
 
 
+### 2017.05.19 Network is in place
+
+Added a new module and performed a bit of refactoring.  Code located [here] (https://github.com/hvag/tf-demo)
+
+Directory structure now looks like this:
+
+```
+|____main-vars.tf
+|____main.tf
+|____modules
+| |____vpc
+| | |____module-vpc.tf
+| | |____outputs.tf
+| | |____vars.tf
+| |____vpc-subnets
+| | |____module-subnets.tf
+| | |____vars.tf
+|____README.md
+|____s3-backend.tf
+```
+
+#### main-vars.tf
+
+
 ...
