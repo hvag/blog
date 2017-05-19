@@ -426,7 +426,7 @@ Utilizing count and iterating over the injected subnet address lists makes it al
 
 ## Building Servers
 _I heard that the network was ready, now can I build my server?_  
-_Well, we're not quite there yet; but, the PM says that we can Fast Track!
+_Well, we're not quite there yet; but, the PM says that we can Fast Track!_
 
 
 ...
