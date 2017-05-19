@@ -253,7 +253,7 @@ Subnet            | Address Ranges                  | Name
 
 ### 2017.05.19 Network is in place
 
-Added a new module and performed a bit of refactoring.  Code located [here] (https://github.com/hvag/tf-demo)
+Added a new module and performed a bit of refactoring.  Code located [here](https://github.com/hvag/tf-demo){:target="_blank"}
 
 Directory structure now looks like this:
 
@@ -273,6 +273,21 @@ Directory structure now looks like this:
 ```
 
 #### main-vars.tf
+```
+variable east-region { default = "us-east-2" }
+variable west-region { default = "us-west-2" }
 
+variable vpc-east-network-address { default = "10.100.0.0/16" }
+variable vpc-west-network-address { default = "10.200.0.0/16" } 
+
+variable vpc-east-network-subnet { default = "10.100" }
+variable vpc-west-network-subnet { default = "10.200" }
+```
+
+Here we have a few bootstrap configuration variables.
+
+- In which AWS regions will we create the VPCs
+- What are the network addresses for the VPCs
+- Prefixes for the VPC subnets
 
 ...
