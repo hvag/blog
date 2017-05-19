@@ -425,7 +425,7 @@ resource "aws_subnet" "Pub" {
 Utilizing count and iterating over the injected subnet address lists makes it all so much easier and cleaner.
 
 ## Building Servers
-_I heard that the network was ready, now can I build my server?_  
+_I heard that the network was ready; now can I start building my servers?_  
 _Well, we're not quite there yet; but, the PM says that we can Fast Track!_
 
 Let me know if you have ideas for improving the code above.  I recall that we're supposed to be able to reduce all code blocks by at least one line.  Therefore, given enough responses, we should be able to get this thing down to one line of code.  [@_markshaw](https://twitter.com/_markshaw){:target="_blank"}
