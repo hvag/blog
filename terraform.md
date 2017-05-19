@@ -422,7 +422,7 @@ resource "aws_subnet" "Pub" {
 }
 ```
 
-Utilizing count and iterating over the injected subnet address list makes it all so much easier and cleaner.
+Utilizing count and iterating over the injected subnet address lists makes it all so much easier and cleaner.
 
 ## Building Servers
 _I heard that the network was ready, now can I build my server?_
