@@ -251,7 +251,7 @@ Subnet            | Address Ranges                  | Name
 10.100.248.0/21   | 10.100.248.1 - 10.100.255.254   | VPC-E-R4-Spare
 
 
-### 2017.05.19 Network is in place
+#### 2017.05.19 Network is in place
 
 Added a new module and performed a bit of refactoring.  Code located [here](https://github.com/hvag/tf-demo){:target="_blank"}
 
