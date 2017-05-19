@@ -343,5 +343,85 @@ module "vpc-west-subnets" {
 
 Each "campus" currently has three "rooms".  If a fourth room is constructed a network segment can be added as shown in the VPN network layout above.  Also, the original Virginia and California DCs were torn-down and reconstructed in Ohio and Oregon.  How crazy is that?
 
+### module-vpc.tf
+
+```
+provider "aws" {
+      region = "${var.region}"
+}
+
+# Create VPC
+resource "aws_vpc" "vpc" {
+    cidr_block = "${var.network-address}"
+
+    instance_tenancy = "default"
+    enable_dns_support = true
+    enable_dns_hostnames = true
+
+    tags {
+        Name      = "${var.name}"
+        Project   = "${var.project-name}"
+        Terraform = "true"
+    }
+}
+```
+
+### module-subnets.tf
+
+```
+provider "aws" {
+      region = "${var.region}"
+}
+
+# Query AWS data source for list of available AZs
+data "aws_availability_zones" "available-azs" {}
+
+# Create Subnets utilizing priv1_subnet_addresses list
+resource "aws_subnet" "Priv1" {
+    vpc_id                  = "${var.vpc-id}"
+    count                   = "${length(var.priv1_subnet_addresses)}"
+    cidr_block              = "${element(var.priv1_subnet_addresses, count.index)}"
+    availability_zone       = "${element(data.aws_availability_zones.available-azs.names, count.index)}"
+    map_public_ip_on_launch = false
+
+    tags {
+        Name      = "Priv1-${count.index}"
+        Project   = "${var.project-name}"
+        Terraform = "true"
+    }
+}
+
+# Create Subnets utilizing priv2_subnet_addresses list
+resource "aws_subnet" "Priv2" {
+    vpc_id                  = "${var.vpc-id}"
+    count                   = "${length(var.priv2_subnet_addresses)}"
+    cidr_block              = "${element(var.priv2_subnet_addresses, count.index)}"
+    availability_zone       = "${element(data.aws_availability_zones.available-azs.names, count.index)}"
+    map_public_ip_on_launch = false
+
+    tags {
+        Name      = "Priv2-${count.index}"
+        Project   = "${var.project-name}"
+        Terraform = "true"
+    }
+}
+
+# Create Subnets utilizing pub_subnet_addresses list
+resource "aws_subnet" "Pub" {
+    vpc_id                  = "${var.vpc-id}"
+    count                   = "${length(var.pub_subnet_addresses)}"
+    cidr_block              = "${element(var.pub_subnet_addresses, count.index)}"
+    availability_zone       = "${element(data.aws_availability_zones.available-azs.names, count.index)}"
+    map_public_ip_on_launch = true
+
+    tags {
+        Name      = "Pub-${count.index}"
+        Project   = "${var.project-name}"
+        Terraform = "true"
+    }
+}
+```
+
+Utilizing count and iterating over the injected subnet address list makes it all so much easier and cleaner.
 
 ...
