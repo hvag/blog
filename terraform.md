@@ -424,7 +424,7 @@ resource "aws_subnet" "Pub" {
 
 Utilizing count and iterating over the injected subnet address list makes it all so much easier and cleaner.
 
-## Build a Server
+## Building Servers
 _I heard that the network was ready, now can I build my server?_
 _Well, we're not quite there yet; but, the PM says that we can Fast Track!
 
