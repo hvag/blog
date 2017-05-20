@@ -140,6 +140,8 @@ To achieve code reusability, we will utilize Terraform modules.
 | | |____vars.tf
 ```
 
+It helps for me to think of modules as functions.  This VPC module(function) has inputs(vars.tf), it has a function body(module-vpc.tf), and it returns something(outputs.tf).
+
 #### vars.tf
 
 ```ruby
