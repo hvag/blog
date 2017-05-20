@@ -229,7 +229,7 @@ _Hey, those are nice new buildings we have; can we put computers in them?_
 _No, we need more stuff_
 
 From the VPC buildout, each campus has been assigned a 10.X.0.0/16 network.  There are currently up to four DC rooms on each campus, designated R1 - R4 with subnets as shown below for VPC-EAST. Each room will be configured to have:
-- 1 Public facing subnet
+- 1 Public facing (DMZ) subnet
 - 2 Private subnets
 - Reserved capacity
 
