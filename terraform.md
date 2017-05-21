@@ -434,6 +434,6 @@ Let me know if you have ideas for improving the code above.  I recall that we're
 
 There's going to be lots of configurations for the Windows Servers; lets launch a new [Windows Page](/blog/windows)
 
-If we're adding a [Windows Page](/blog/windows), we'll clearly also need a [Linux Page](/blog/linux).  And it's never too early to start considering [Governance](/blog/governance)
+If we're adding a [Windows Page](/blog/windows), we'll clearly also need a [Linux Page](/blog/linux).  And it's never too early to start considering [Security](/blog/security) and [Governance](/blog/governance)
 
 ...
