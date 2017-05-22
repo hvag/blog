@@ -432,8 +432,8 @@ _Well, we're not quite there yet; but, the PM says that we can Fast Track!_
 
 Let me know if you have ideas for improving the code above.  I recall that we're supposed to be able to reduce all code blocks by at least one line.  Therefore, given enough responses, we should be able to get this thing down to one line of code.  [@_markshaw](https://twitter.com/_markshaw){:target="_blank"}
 
-There's going to be lots of configurations for the Windows Servers; lets launch a new [Windows Page](/blog/windows)
+There's going to be lots of configurations for the Windows Servers; lets launch a new [Windows Page](/blog/windows).
 
-If we're adding a [Windows Page](/blog/windows), we'll clearly also need a [Linux Page](/blog/linux).  And it's never too early to start considering [Security](/blog/security) and [Governance](/blog/governance)
+If we're adding a [Windows Page](/blog/windows), we'll clearly also need a [Linux Page](/blog/linux).  And it's never too early to start considering [Security](/blog/security) and [Governance](/blog/governance).
 
 ...
