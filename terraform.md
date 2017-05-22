@@ -468,6 +468,6 @@ With this revised layout, we will be able to have
 
 - Seperate config and state files for Dev, Staging and Prod environments
 - Modules that can be shared across all the environments
-- Plan to utilize 'remote state' to localize state files for individual systems/components, for example, Active Directory(AD) and Graylog.  We will take a look at remote state when we build these systems.
+- Plan to utilize 'remote state' to localize state files for individual systems/components, for example, VPC, Active Directory(AD) and Graylog.  We will take a look at remote state when we build these systems.
 
 ...
