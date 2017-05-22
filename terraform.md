@@ -436,4 +436,38 @@ There's going to be lots of configurations for the Windows Servers; lets launch 
 
 If we're adding a [Windows Page](/blog/windows), we'll clearly also need a [Linux Page](/blog/linux).  And it's never too early to start considering [Security](/blog/security) and [Governance](/blog/governance).
 
+## More on Modules
+
+Let's revisit our modules approach.  We're about to deploy a few servers and prefer not to have a single, ever-growing, tightly-coupled, large blast-radius, Terraform config and state.
+
+Directory structure now looks like this:
+
+```
+├── dev
+│   ├── AD
+│   ├── graylog
+│   └── vpc
+│       ├── main.tf
+│       ├── main-vars.tf
+│       ├── s3-backend.tf
+│       └── terraform.tfstate.backup
+├── modules
+│   ├── vpc
+│   │   ├── module-vpc.tf
+│   │   ├── outputs.tf
+│   │   └── vars.tf
+│   └── vpc-subnets
+│       ├── module-subnets.tf
+│       └── vars.tf
+├── prod
+├── README.md
+└── staging
+```
+
+With this layout, we will be able to have
+
+- Seperate config and state files for Dev, Staging and Prod environments
+- Modules that can be shared across all the environments
+- Plan to utilize 'remote state' to localize state files for individual systems/components, for example, Active Directory(AD) and Graylog.  We will take a look at remote state when we build these systems.
+
 ...
