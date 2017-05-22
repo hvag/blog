@@ -478,10 +478,10 @@ In order to access instances built on AWS, SSH keys are required.
 
 1. Use ssh-keygen to create a new key pair on your local workstation
 
-2. Create a key.tf file
+2. Create a key.tf file in dev/vpc
 ```
-resource "aws_key_pair" "TF-Demo-Key" {
-    key_name = "TF-Demo-Key"
+resource "aws_key_pair" "TF-Demo-Dev-Key" {
+    key_name = "TF-Demo-Dev-Key"
     public_key = "${file("${var.PATH_TO_PUBLIC_KEY}")}"
 }
 ```
