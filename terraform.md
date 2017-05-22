@@ -464,7 +464,7 @@ Directory structure now looks like this:
 └── staging
 ```
 
-With this layout, we will be able to have
+With this revised layout, we will be able to have
 
 - Seperate config and state files for Dev, Staging and Prod environments
 - Modules that can be shared across all the environments
