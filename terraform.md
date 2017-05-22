@@ -464,10 +464,12 @@ Directory structure now looks like this:
 └── staging
 ```
 
-With this revised layout, we will be able to have
+With this revised layout, we will be able to have:
 
-- Seperate config and state files for Dev, Staging and Prod environments
+- Separate config and state files for Dev, Staging and Prod environments
 - Modules that can be shared across all the environments
-- Plan to utilize 'remote state' to localize state files for individual systems/components, for example, VPC, Active Directory(AD) and Graylog.  We will take a look at remote state when we build these systems.
+- Plan to utilize 'remote state' to localize state files for individual systems/components, for example, VPC, Active Directory(AD) and Graylog.
+
+We will take a look at remote state when we build the individual components.  We will also need to plan for module versioning.  Module versioning will allow us to, for example, utilize an updated version of a module in the Dev environment, while still running the previous tested release in Prod.
 
 ...
