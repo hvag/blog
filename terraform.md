@@ -438,7 +438,7 @@ If we're adding a [Windows Page](/blog/windows), we'll clearly also need a [Linu
 
 ## More on Modules
 
-Let's revisit our modules approach.  We're about to deploy a few servers and prefer not to have a single, ever-growing, tightly-coupled, large blast-radius, Terraform config and state.
+Let's revisit our modules approach.  We're about to deploy a few servers and prefer not to have a single, ever-growing, tightly-coupled, large blast radius, Terraform config and state.
 
 Directory structure now looks like this:
 
