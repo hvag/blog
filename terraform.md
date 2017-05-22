@@ -480,8 +480,8 @@ In order to access instances built on AWS, SSH keys are required.
 
 2. Create a key.tf file
 ```
-resource "aws_key_pair" "TF-Demo-KeyPair" {
-    key_name = "TF-Demo-KeyPair"
+resource "aws_key_pair" "TF-Demo-Key" {
+    key_name = "TF-Demo-Key"
     public_key = "${file("${var.PATH_TO_PUBLIC_KEY}")}"
 }
 ```
