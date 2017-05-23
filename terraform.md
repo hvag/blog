@@ -472,6 +472,44 @@ With this revised layout, we will be able to have:
 
 We will take a look at remote state when we build the individual components.  We will also need to plan for module versioning.  Module versioning will allow us to, for example, utilize an updated version of a module in the Dev environment, while still running the previous tested release in Prod.
 
+## Another code structure update
+
+Directory structure now looks like this:
+
+```
+├── dev
+│   ├── east
+│   │   ├── keys
+│   │   │   ├── TF-Demo-Dev.key
+│   │   │   └── TF-Demo-Dev.pub.key
+│   │   ├── key.tf
+│   │   ├── s3-backend.tf
+│   │   ├── terraform.tfstate.backup
+│   │   └── vars.tf
+│   ├── vpc
+│   │   ├── main.tf
+│   │   ├── main-vars.tf
+│   │   ├── s3-backend.tf
+│   │   └── terraform.tfstate.backup
+│   └── west
+├── modules
+│   ├── vpc
+│   │   ├── module-vpc.tf
+│   │   ├── outputs.tf
+│   │   └── vars.tf
+│   └── vpc-subnets
+│       ├── module-subnets.tf
+│       └── vars.tf
+├── prod
+├── README.md
+└── staging
+```
+
+We will have:
+
+- Shared modules that can be worked on individually.  Versioning is still outstanding
+- Separate config files for subcomponents of each environment, Dev/Staging/Prod.  For example, within Dev, the VPC(s), East components, and West components can be developed/deployed individually.  We will have at least one additional subcomponent level.  For example, within Dev/East, individual systems such as AD and Graylog can be managed separately as needed.  We can revisit guidelines and best practices for when making this decision.  Recall, individual system is indicative of having a localized state file.
+
 ## Create a Key Pair
 
 In order to access instances built on AWS, SSH keys are required.
