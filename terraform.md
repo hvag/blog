@@ -480,7 +480,6 @@ Directory structure now looks like this:
 ├── dev
 │   ├── east
 │   │   ├── keys
-│   │   │   ├── TF-Demo-Dev.key
 │   │   │   └── TF-Demo-Dev.pub.key
 │   │   ├── key.tf
 │   │   ├── s3-backend.tf
