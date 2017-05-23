@@ -539,6 +539,6 @@ variable "PATH_TO_PUBLIC_KEY" {
 
 We're going to deploy a new AD forest within our new AWS 'cloud space'.  We will need to deploy a few servers.  The majority of these servers will not be accessible via the internet.  They will be hosted on the Private subnets.  We will utilize bastion hosts and [EC2 Systems Manager](https://aws.amazon.com/ec2/systems-manager){:target="_blank"} to access and manage these servers.
 
-Let's build the Windows bastion server(s), along with all other servers from a 'golden image'.  Go to our [Windows Page](/blog/windows) for details.
+Let's build the Windows bastion server(s), along with all other servers from 'golden images'.  Go to our [Windows Page](/blog/windows) for details.
 
 ...
