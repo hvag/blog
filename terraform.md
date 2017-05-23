@@ -506,7 +506,7 @@ Directory structure now looks like this:
 
 We will have:
 
-- Shared modules that can be worked on individually.  Versioning is still outstanding
+- Shared modules that can be worked on individually.  Versioning is still pending
 - Separate config files for subcomponents of each environment, Dev/Staging/Prod.  For example, within Dev, the VPC(s), East components, and West components can be developed/deployed individually.  We will have at least one additional subcomponent level.  For example, within Dev/East, individual systems such as AD and Graylog can be managed separately as needed.  We can revisit guidelines and best practices for when making this decision.  Recall, individual system is indicative of having a localized state file.
 
 ## Create a Key Pair
@@ -538,6 +538,8 @@ variable "PATH_TO_PUBLIC_KEY" {
 ## Back to Building Servers
 
 We're going to deploy a new AD forest within our new AWS 'cloud space'.  We will need to deploy a few servers.  The majority of these servers will not be accessible via the internet.  They will be hosted on the Private subnets.  We will utilize bastion hosts and [EC2 Systems Manager](https://aws.amazon.com/ec2/systems-manager){:target="_blank"} to access and manage these servers.
+
+Hey, check it out, we're not just going to do DevOps, we'll be doing DevSecOps.  Excellent!
 
 Let's build the Windows bastion server(s), along with all other servers from 'golden images'.  Go to our [Windows Page](/blog/windows) for details.
 
