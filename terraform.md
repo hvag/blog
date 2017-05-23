@@ -513,9 +513,24 @@ We will have:
 
 In order to access instances built on AWS, SSH keys are required.
 
+The steps below will be performed in Dev\East
+
 1. Use ssh-keygen to create a new key pair on your local workstation
 
-2. Create a file key.tf ...
+2. Create a file key.tf for the key pair resource
+```
+resource "aws_key_pair" "TF-Demo-Dev-Key" {
+    key_name = "TF-Demo-Dev-Key"
+    public_key = "${file("${var.PATH_TO_PUBLIC_KEY}")}"
+}
+```
+
+3. Add to vars.tf
+```
+variable "PATH_TO_PUBLIC_KEY" {
+    default = "keys/TF-Demo-Dev.pub.key"
+}
+```
 
 3. Run `terraform apply`
 
