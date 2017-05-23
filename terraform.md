@@ -541,6 +541,6 @@ We're going to deploy a new AD forest within our new AWS 'cloud space'.  We will
 
 Hey, check it out, we're not just going to do DevOps, we'll be doing DevSecOps.  Excellent!
 
-Let's build the Windows bastion server(s), along with all other servers from 'golden images'.  Go to our [Windows Page](/blog/windows) for details.
+Let's build the Windows bastion server(s), along with all the other servers, from 'golden images'.  Go to our [Windows Page](/blog/windows) for details.
 
 ...
