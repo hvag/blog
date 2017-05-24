@@ -593,4 +593,66 @@ resource "aws_route_table_association" "VPC-public-assoc" {
 
 For setting the route table associations, we'll try something new.  Terraform seems to not yet have the capability to pass a list as a variable.  We want to pass the list of subnets that should be associated with the routing table containing the route to the internet.  To work around this, use the join and split functions.  We can pass the list as a delimited string (join), then reconstruct the list (split) for use with the count function.
 
+
+## Security Group
+
+Security Groups are Virtual Firewalls for the AWS instances.  Let's create a module to create our initial security groups.  We will allow inbound SSH traffic to Linux servers and inbound RDP traffic to Windows servers.  We will allow all outbound traffic.  We can revisit these configurations later in the project.
+
+```
+# VPC Default Security Group - Public - Windows
+resource "aws_security_group" "SG-Public-Default-Win" {
+    vpc_id = "${var.vpc-id}"
+    name = "SG-Public-Default-Win"
+    description = "Default Public Security Group (Windows) - Ingress RDP - Egress ALL traffic"
+
+    egress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+
+    ingress {
+        from_port = 3389
+        to_port = 3389
+        protocol = "tcp"
+        cidr_blocks = ["${var.vpc-ingressIP}"]
+    }
+
+    tags {
+        Name = "SG-Public-Default-Win"
+        Project   = "${var.project-name}"
+        Terraform = "true"
+    }
+}
+
+
+# VPC Default Security Group - Public - Linux
+resource "aws_security_group" "SG-Public-Default-Linux" {
+    vpc_id = "${var.vpc-id}"
+    name = "SG-Public-Default-Linux"
+    description = "Default Public Security Group (Linux) - Ingress SSH - Egress ALL traffic"
+
+    egress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+
+    ingress {
+        from_port = 22
+        to_port = 22
+        protocol = "tcp"
+        cidr_blocks = ["${var.vpc-ingressIP}"]
+    }
+
+    tags {
+        Name = "SG-Public-Default-Linux"
+        Project   = "${var.project-name}"
+        Terraform = "true"
+    }
+}
+```
+
 ...
