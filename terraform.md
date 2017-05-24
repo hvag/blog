@@ -596,7 +596,7 @@ For setting the route table associations, we'll try something new.  Terraform se
 
 ## Security Group
 
-Security Groups are Virtual Firewalls for the AWS instances.  Let's create a module to create our initial security groups.  We will allow inbound SSH traffic to Linux servers and inbound RDP traffic to Windows servers.  Inbound traffic will be limited to a specified ingress CIDR block, prompted for at build time.  We will allow all outbound traffic.  We can revisit these configurations later in the project.
+Security Groups are Virtual Firewalls for the AWS instances.  Let's create another module to build our initial security groups.  We will allow inbound SSH traffic to Linux servers and inbound RDP traffic to Windows servers.  Inbound traffic will be limited to a specified ingress CIDR block, prompted for at security group build time.  We will allow all outbound traffic.  We can revisit these configurations later in the project.
 
 ```
 # VPC Default Security Group - Public - Windows
