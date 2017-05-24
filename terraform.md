@@ -592,4 +592,5 @@ resource "aws_route_table_association" "VPC-public-assoc" {
 ```
 
 For setting the route table associations, we'll try something new.  Terraform seems to not yet have the capability to pass a list as a variable.  We want to pass the list of subnets that should be associated with the routing table containing the route to the internet.  To work around this, use the join and split functions.  We can pass the list as a delimited string (join), then reconstruct the list (split) for use with the count function.
+
 ...
