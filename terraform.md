@@ -543,4 +543,53 @@ Hey, check it out, we're not just going to do DevOps, we'll be doing DevSecOps. 
 
 Let's build the Windows bastion server(s), along with all the other servers, from 'golden images'.  Go to our [Windows Page](/blog/windows) for details.
 
+
+## Internet Gateway
+
+Instances in the Public subnets will need an Internet Gateway configured to make them reachable via the internet.  Let's create a new module, VPC-IG
+
+### module vpc-IG
+```
+ provider "aws" {
+      region = "${var.region}"
+}
+
+# Create Internet Gateway
+resource "aws_internet_gateway" "IG" {
+    vpc_id = "${var.vpc-id}"
+
+    tags {
+        Name      = "${var.name}"
+        Project   = "${var.project-name}"
+        Terraform = "true"
+    }
+}
+
+
+# Create Route Table - Public
+resource "aws_route_table" "VPC-Default-GW-Public" {
+    vpc_id = "${var.vpc-id}"
+
+    route {
+        cidr_block = "0.0.0.0/0"
+        gateway_id = "${aws_internet_gateway.IG.id}"
+    }
+
+    tags {
+        Name = "VPC-Default-GW-Public"
+        Project   = "${var.project-name}"
+        Terraform = "true"
+    }
+}
+
+
+# Set Route Table Associations - Public
+resource "aws_route_table_association" "VPC-public-assoc" {
+    count          = "${length(split(":", var.pub-subnet-ids))}"
+    subnet_id      = "${element(split(":", var.pub-subnet-ids), count.index)}"
+    route_table_id = "${aws_route_table.VPC-Default-GW-Public.id}"
+}
+```
+
+For setting the route table associations, we'll try something new.  Terraform seems to not yet have the capability to pass a list as a variable.  We want to pass the list of subnets that should be associated with the routing table containing the route to the internet.  To work around this, use the join and split functions.  We can pass the list as a delimited string (join), then reconstruct the list (split) for use with the count function.
 ...
