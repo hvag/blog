@@ -77,6 +77,12 @@ When we build the VPCs, we have the build process generate output.  That output 
 
 So basically, we are spinning up a new Windows instance with a specified AMI and instance type.  We're placing it in our EAST DC attached to the first PUBLIC subnet.  We're configuring its virtual firewall via the default public security group.  And we are specifying the SSH key used for gaining access to the server.
 
+## Configure Base Image
+
+Now, that we have a running windows instance.  Let's go ahead and configure it to meet our baseline requirements.
+
+Log into the server via RDP and perform the following:
+
 
 ...
 
