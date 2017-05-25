@@ -657,4 +657,6 @@ resource "aws_security_group" "SG-Public-Default-Linux" {
 
 We should now be able to build and access our first server.  This will be a bastion server residing in the DMZ.  Oh, wait, first we need to confirm the status of our [Windows golden image](/blog/windows).
 
+### [Parked Items](/blog/parkedItems)
+
 ...
