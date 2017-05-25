@@ -169,7 +169,36 @@ We should now be able to build the bastion host.  Well, maybe not, we want the b
 
 Hmm, need a plan to get updates to the servers in the private subnets; working on it.
 
-### Active Directory
+### Bastion
+
+```
+# Create Windows 2016 Server Instance
+resource "aws_instance" "East-Bastion1" {
+    ami = "${aws_ami_copy.windows2016-Image.id}"
+    instance_type = "t2.micro"
+
+    # VPC subnet
+    subnet_id = "${element(split(":", data.terraform_remote_state.vpc-state.vpc-east-pub-subnet-ids), 0)}"
+
+    # Security Group
+    vpc_security_group_ids = ["${data.terraform_remote_state.vpc-state.vpc-east-SG-Public-Default-Win-id}"]
+
+    # Public SSH key
+    key_name = "${aws_key_pair.TF-Demo-Dev-Key.key_name}"
+
+    # Private IP - static
+    private_ip = "10.100.128.10"
+
+    tags {
+        Name      = "East-Bastion1"
+        Project   = "${data.terraform_remote_state.vpc-state.project-name}"
+        Terraform = "true"
+        Description = "Windows Bastion Host"
+    }
+}
+```
+
+## Active Directory
 
 I'm unable to think of any good reason to go with an Empty Root design so we'll go with a single domain forest.  And, there is this on [TechNet](https://blogs.technet.microsoft.com/askds/2010/05/07/friday-mail-sack-tweener-clipart-comics-edition/#adempty){:target="_blank"}
 
