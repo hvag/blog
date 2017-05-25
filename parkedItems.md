@@ -12,3 +12,5 @@ comments: true
 
 2. Review original unencrypted Windows instance and AMI used for gold image (InfoSec)
 
+...
+
