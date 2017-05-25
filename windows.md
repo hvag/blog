@@ -83,6 +83,53 @@ Now, that we have a running windows instance.  Let's go ahead and configure it t
 
 Log into the server via RDP and perform the following:
 
+1. Create a new account to be the Local Administrator and add this account to the Administrators group.  We will use this account for any subsequent activity.  All future servers built from this image will have this account/password included.
+
+2. Run the EC2LaunchSettings application located in C:\ProgramData\Amazon\EC2-Windows\Launch\Settings and select `Shutdown with Sysprep`
+
+
+## Create Base Image AMI
+
+### instance-windows-image.tf (_updated_)
+
+```
+# Create Windows 2016 Server Instance
+resource "aws_instance" "windows2016-Image" {
+    ami = "ami-f1b5cfe7"
+    instance_type = "t2.micro"
+
+    # VPC subnet
+    subnet_id = "${element(split(":", data.terraform_remote_state.vpc-state.vpc-east-pub-subnet-ids), 0)}"
+
+    # Security Group
+    vpc_security_group_ids = ["${data.terraform_remote_state.vpc-state.vpc-east-SG-Public-Default-Win-id}"]
+
+    # Public SSH key
+    key_name = "${aws_key_pair.TF-Demo-Dev-Key.key_name}"
+
+    tags {
+        Name      = "windows2016-Image"
+        Project   = "${data.terraform_remote_state.vpc-state.project-name}"
+        Terraform = "true"
+        Description = "Windows 2016 Golden Image - Source"
+    }
+}
+
+
+resource "aws_ami_from_instance" "windows2016-Image" {
+    name               = "windows2016-Image"
+    source_instance_id = "${aws_instance.windows2016-Image.id}"
+
+    tags {
+        Name        = "windows2016-Image"
+        Project     = "${data.terraform_remote_state.vpc-state.project-name}"
+        Terraform   = "true"
+        Description = "Windows 2016 Golden Image - AMI"
+    }
+}
+```
+
+
 
 ...
 
