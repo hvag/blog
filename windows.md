@@ -12,6 +12,39 @@ First, we will create an instance to be used as the template for subsequent Wind
 
 Okay, it's wrong.  Let's deploy the 'image' instance via Terraform.
 
+### main.tf
+```
+# During build, the VPC outputs the region that it is constructed in.
+# Get that for provider region below.
+
+data "terraform_remote_state" "vpc-state" {
+    backend = "s3"
+    config {
+        bucket  = "hvag-tfdemo-state"
+        key     = "vpc/terraform.tfstate"
+        region  = "us-east-1"
+    }
+}
+
+
+provider "aws" {
+    region = "${data.terraform_remote_state.vpc-state.east-region}"
+}
+
+
+# Query AWS for the latest Windows 2016 Base AMI
+# We don't yet want the image to be rebuilt whenever there's a new AMI
+# We will use the current latest: ami-f1b5cfe7
+data "aws_ami" "windows2016-image" {
+    most_recent = "true"
+
+    filter {
+    name   = "name"
+    values = ["Windows_Server-2016-English-Full-Base*"]
+  }
+}
+```
+
 ### instance-windows-image.tf
 ```
 resource "aws_instance" "windows2016-Image" {
@@ -34,4 +67,16 @@ resource "aws_instance" "windows2016-Image" {
     }
 }
 ```
+
+Not only did we use Terraform for creating the instance, but we got to try something new.  Notice the usage of `terraform_remote_state`.
+
+When we build the VPCs, we have the build process generate output.  That output is stored in the VPC state file.  From other systems in the project, we can pull those outputs as inputs for use.  When creating the instance above, we query the VPC state file for:
+- the id of the first public subnet
+- the id of the default public security group
+- the name of the project
+
+So basically, we are spinning up a new Windows instance with a specified AMI and instance type.  We're placing it in our EAST DC attached to the first PUBLIC subnet.  We're configuring its virtual firewall via the default public security group.  And we are specifying the SSH key used for gaining access to the server.
+
+
+...
 
