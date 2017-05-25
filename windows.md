@@ -158,4 +158,6 @@ resource "aws_ami_copy" "windows2016-Image" {
 
 Let's add status review for the original unencrypted instance and AMI to our [Parked Items](/blog/parkedItems)
 
+### [Parked Items](/blog/parkedItems)
+
 ...
