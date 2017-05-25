@@ -133,7 +133,7 @@ resource "aws_ami_from_instance" "windows2016-Image" {
 
 ## Create Base Image AMI (Encrypted)
 
-Okay, it's a good thing we've got InfoSec engaged as part of the team.  By policy, we will be required to deliver encryption of data at rest or seek an exemption.  Let's give it a shot.
+Okay, it's a good thing we've got [InfoSec](/blog/security) engaged as part of the team.  By policy, we will be required to deliver encryption of data at rest or seek an exemption.  Let's give it a shot.
 
 We can make a copy of the existing AMI, encrypting the copy in the process.  New instances built from the encrypted AMI will have an encrypted boot volume.
 
@@ -155,4 +155,3 @@ resource "aws_ami_copy" "windows2016-Image" {
 ```
 
 ...
-
