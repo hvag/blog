@@ -70,6 +70,8 @@ resource "aws_instance" "windows2016-Image" {
 
 Not only did we use Terraform for creating the instance, but we got to try something new.  Notice the usage of `terraform_remote_state`.
 
+## Remote State
+
 When we build the VPCs, we have the build process generate output.  That output is stored in the VPC state file.  From other systems in the project, we can pull those outputs as inputs for use.  When creating the instance above, we query the VPC state file for:
 - The id of the first public subnet
 - The id of the default public security group
