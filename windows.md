@@ -156,6 +156,14 @@ resource "aws_ami_copy" "windows2016-Image" {
 
 Let's add status review for the original unencrypted instance and AMI to our [Parked Items](/blog/parkedItems)
 
+## Bastion Host
+
+We should now be able to build the bastion host.  Well, maybe not, we want the bastion host to participate in a windows domain.  Therefore, we first need to have our basic DC environment up and functioning.  I think we will now start to perform several manual steps then revisit how to script and automate it.
+
+### Active Directory
+
+I'm unable to think of any good reason to go with an Empty Root design so we'll go with a single domain forest.  And, there is this on [TechNet](https://blogs.technet.microsoft.com/askds/2010/05/07/friday-mail-sack-tweener-clipart-comics-edition/#adempty)
+
 ### [Parked Items](/blog/parkedItems)
 
 ...
