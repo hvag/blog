@@ -58,4 +58,6 @@ Also, would like increased performance for this server so will switch instance_t
 
 DC1 and DC2 have been created in separate subnets/availability zones/rooms.  They will not both be impacted by any local event.  We will eventually add DCs to the WEST data center to account for any insanely large geographic impacting event.
 
+### [Parked Items](/blog/parkedItems)
+
 ...
