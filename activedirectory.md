@@ -81,8 +81,8 @@ Also, would like increased performance for these servers so will switch instance
 
 1. In Server Manager, change the name of the servers from the AWS generated name to EAST-DC1 and EAST-DC2
 1. Configure the Network Device
-  1. EAST-DC1 - TCP/IPv4 - set the Preferred DNS server to 127.0.0.1
-  1. EAST-DC2 - Set the preferred DNS server to 10.100.192.10 (EAST-DC1)
+  * EAST-DC1 - TCP/IPv4 - set the Preferred DNS server to 127.0.0.1
+  * EAST-DC2 - Set the preferred DNS server to 10.100.192.10 (EAST-DC1)
 1. Disable native firewall - Add to parking lot for final config.
 1. Set TZ
 
