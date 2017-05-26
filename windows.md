@@ -198,9 +198,6 @@ resource "aws_instance" "East-Bastion1" {
 }
 ```
 
-## Active Directory
-
-I'm unable to think of any good reason to go with an Empty Root design so we'll go with a single domain forest.  And, there is this on [TechNet](https://blogs.technet.microsoft.com/askds/2010/05/07/friday-mail-sack-tweener-clipart-comics-edition/#adempty){:target="_blank"}
 
 ### [Parked Items](/blog/parkedItems)
 
