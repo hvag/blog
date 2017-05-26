@@ -8,6 +8,8 @@ comments: true
 
 Okay, we can now start building the Domain Controllers.
 
+I'm unable to think of any good reason to go with an Empty Root design so we'll go with a single domain forest.  And, there is this on [TechNet](https://blogs.technet.microsoft.com/askds/2010/05/07/friday-mail-sack-tweener-clipart-comics-edition/#adempty){:target="_blank"}
+
 **Security Note** - Let's isolate the AD and other control servers to the PRIV2 subnet (security boundary).  We will initially allow all traffic between the servers on this subnet.  Additional lock-down is pending.
 
 ### instance-windows-DCs.tf - Looks like a candidate for conversion to a module
