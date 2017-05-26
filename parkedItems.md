@@ -10,7 +10,11 @@ comments: true
 
 1. Versioning for modules
 
-2. Review original unencrypted Windows instance and AMI used for gold image (InfoSec)
+1. Review original unencrypted Windows instance and AMI used for gold image (InfoSec)
+
+1. Server Firewall Settings - GPO?
+
+1. Degree of Security Group Lockdown
+
 
 ...
-
