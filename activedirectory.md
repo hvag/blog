@@ -8,6 +8,10 @@ comments: true
 
 Okay, we can now start building the Domain Controllers.
 
+**Security Note** - Let's isolate the AD and other control servers to the PRIV2 subnet (security boundary).  We will initially allow all traffic between the servers on this subnet.  Additional lock-down is pending.
+
+## First DC
+
 ### instance-windows-DCs.tf
 
 ```
@@ -41,7 +45,17 @@ resource "aws_instance" "East-DC1" {
 }
 ```
 
-For the DCs, we have create a new state file.  We are now three levels deep.
+For the DCs, we have created a new state file.  We are now three levels deep.  We will perform a few manual activities.
 
+Also, would like increased performance for this server so will switch instance_type from t2.micro to t2.small. 
+
+1. In Server Manager, change the name of the server from the AWS generated name to EAST-DC1
+1. Configure the Network Device.  For TCP/IPv4 set the Preferred DNS server to 127.0.0.1
+1. Disable native firewall - Add to parking lot for final config.
+
+
+## Second DC
+
+DC1 and DC2 have been created in separate subnets/availability zones/rooms.  They will not both be impacted by any local event.  We will eventually add DCs to the WEST data center to account for any insanely large geographic impacting event.
 
 ...
