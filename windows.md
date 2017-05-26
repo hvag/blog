@@ -158,13 +158,13 @@ Let's add status review for the original unencrypted instance and AMI to our [Pa
 
 ## Bastion Host
 
-We should now be able to build the bastion host.  Well, maybe not, we want the bastion host to participate in a windows domain.  Therefore, we first need to have our basic DC environment up and functioning.  I think we will now start to perform several manual steps then revisit how to script and automate it.  Oh, wait, we will need the bastion host first.  We're going to deploy the DC in a private subnet with no internet access; bastion here we come.  We'll try this sequence:
+We should now be able to build the bastion host.  Well, maybe not, we want the bastion host to participate in a windows domain (or do we?).  Therefore, we first need to have our basic DC environment up and functioning.  I think we will now start to perform several manual steps then revisit how to script and automate it.  Oh, wait, we will need the bastion host first.  We're going to deploy the DC in a private subnet with no internet access; bastion here we come.  We'll try this sequence:
 
 1. Install bastion
 2. Install DC
 3. Access DC via bastion
 4. Configure DC
-5. Add bastion to domain
+5. Add bastion to domain (maybe)
 6. Configure RD gateway
 
 Hmm, need a plan to get updates to the servers in the private subnets; working on it.
