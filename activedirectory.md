@@ -83,7 +83,7 @@ Also, would like increased performance for these servers so will switch instance
 1. Configure the Network Device
   * EAST-DC1 - TCP/IPv4 - set the Preferred DNS server to 127.0.0.1
   * EAST-DC2 - Set the preferred DNS server to 10.100.192.10 (EAST-DC1)
-1. Disable native firewall - Add to parking lot for final config.
+1. Disable native firewall - Add to [parking lot](/blog/parkedItems) for final config.
 1. Set TZ
 
 DC1 and DC2 have been created in separate subnets/availability zones/rooms.  They will not both be simultaneously impacted by any local event.  We will eventually add DCs to the WEST data center for additional redundancy and to account for any insanely large geographic impacting event.
