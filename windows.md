@@ -164,7 +164,7 @@ We should now be able to build the bastion host.  Well, maybe not, we want the b
 2. Install DC
 3. Access DC via bastion
 4. Configure DC
-5. Add bastion to domain (maybe)
+5. Add bastion to domain (maybe, let's start with no)
 6. Configure RD gateway
 
 Hmm, need a plan to get updates to the servers in the private subnets; working on it.
