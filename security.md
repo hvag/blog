@@ -15,3 +15,5 @@ Lets start collecting items for a possible security policy
 3. Data in flight is encrypted
 
 4. Devices with public facing interfaces utilize two-factor authentication
+
+5. System events will be logged
