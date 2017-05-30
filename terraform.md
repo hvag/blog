@@ -9,45 +9,39 @@ comments: true
 Let's use Terraform to create a bit of new infrastructure - This doc is a work in progress.  Check back for updates.  Follow progress on twitter: 
 [@_markshaw](https://twitter.com/_markshaw){:target="_blank"}
 
+### TOC
 * TOC
 {:toc}
 
--
-### 1. Purpose
+### Purpose
 
 An example of utilizing Terraform to build components
 
--
-### 2. Scope
+### Scope
 
 Infrastructure - concept to build via Terraform
 
--
-### 3. References
+### References
 
 NA
 
--
-### 4. Definitions
+### Definitions
 
 NA
 
--
-### 5. Responsibilities
+### Responsibilities
 
 NA
 
--
-### 6. Materials and Equipment
+### Materials and Equipment
 
-  6.1 An existing AWS account
+	- An existing AWS account
   
-  6.2 The AWS CLI is installed
+  	- The AWS CLI is installed
   
-  6.3 Terraform v0.9.5 or above is installed
+  	- Terraform v0.9.5 or above is installed
 
--
-### 7. Make it so
+### Make it so
 
 Let's start our build with AWS.  Why AWS?  Why not AWS; besides, AWS is the space where confidence is high that we can produce a quick win.
 
