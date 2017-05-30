@@ -10,7 +10,6 @@ Let's use Terraform to create a bit of new infrastructure - This doc is a work i
 [@_markshaw](https://twitter.com/_markshaw){:target="_blank"}
 
 ### TOC
-* TOC
 {:toc}
 
 ### Purpose
