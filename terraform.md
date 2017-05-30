@@ -34,11 +34,11 @@ NA
 
 ### Materials and Equipment
 
-	- An existing AWS account
+ * An existing AWS account
   
-  	- The AWS CLI is installed
+ * The AWS CLI is installed
   
-  	- Terraform v0.9.5 or above is installed
+ * Terraform v0.9.5 or above is installed
 
 ### Make it so
 
