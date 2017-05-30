@@ -9,6 +9,9 @@ comments: true
 Let's use Terraform to create a bit of new infrastructure - This doc is a work in progress.  Check back for updates.  Follow progress on twitter: 
 [@_markshaw](https://twitter.com/_markshaw){:target="_blank"}
 
+* TOC
+{:toc}
+
 -
 ### 1. Purpose
 
