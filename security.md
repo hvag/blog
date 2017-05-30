@@ -6,7 +6,7 @@ published: true
 comments: true
 ---
 
-Lets start collecting items for a possible security policy
+Let's start collecting items for a possible security policy
 
 1. All users have unique credentials
 
