@@ -16,5 +16,6 @@ comments: true
 
 1. Degree of Security Group Lockdown
 
+1. Linux Image - Add [CW scripts](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/mon-scripts.html) for collecting instance metrics
 
 ...
