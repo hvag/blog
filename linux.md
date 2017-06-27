@@ -96,3 +96,6 @@ resource "aws_instance" "East-Bastion-L1" {
     }
 }
 ```
+
+### [Parked Items](/blog/parkedItems)
+
