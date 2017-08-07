@@ -1,6 +1,6 @@
 ---
 layout: page-disqus
-title: Security
+title: Security and Governance
 permalink: /security/
 published: true
 comments: true
