@@ -16,9 +16,11 @@ First item - Deploy MongoDB tools to client (Mac).  Guideline for installing can
 
 Let's utilize Docker as part of this project.  Assuming Docker is already installed on the system...
 
-```sudo docker run -d -p 27017:27017 -v <some_location>/data:/data/db mongo```
+```docker run --name mean-mongo -d -p 27017:27017 -v <some_location>/data:/data/db mongo```
 
-
+Let's test DB (Mongo uses database named 'test' as default
+ - db.test.insert({ key: "value" });
+ - db.test.findOne({ key: "value" });
 
 
 
