@@ -7,7 +7,7 @@ published: true
 
 Let's build a system utilizing the MEAN stack
 
-First item - Deploy MongoDB tools to client (Mac).  Guideline for installing can be gound [here:](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/){:target="_blank"}
+First item - Deploy MongoDB tools to client (Mac).  Guideline for installing can be found [here:](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/){:target="_blank"}
 
 - Download latest .tgz file
 - Extract with 'tar'
