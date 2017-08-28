@@ -1,7 +1,7 @@
 ---
 layout: page
 title: MEAN
-permalink: /MEAN/
+permalink: /mean/
 published: true
 ---
 
