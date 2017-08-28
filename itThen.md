@@ -9,4 +9,4 @@ What we liked yesterday
 
  - [Windows](/blog/windows)
  - [Linux](/blog/linux)
- - [Active Directory](/blog/active directory)
+ - [Active Directory](/blog/activedirectory)
