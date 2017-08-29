@@ -16,7 +16,8 @@ What we love right now
  - Swift - See Node.js
  - Docker - hmm, container.  It works on my computer, it will work on your also
  - Kubernetes - I can control you all, 'cause actually, I just have to control one machine, the kb machine, universal abstraction, nice!  Stop thinking about Java
- - Lambda - Hey, wait a minute, what if I didn't even have to build and orchestrate the containers?  What if I could just launch the app/service?
+ - Kubernetes Init Container - Hey, wait a minute, what if I didn't even have to build and orchestrate the containers?  What if I could just launch the app/service?
+ - Lambda - See Kubernetes Init Container
  
 ### Testing
  - Mocha
