@@ -103,6 +103,11 @@ describe('hvagGeneriCRUD Express App', () => {
 })
 ```
 
+### Body-Parser
+
+Express is not great for handling the {body} of a POST request.  For this functionality, we will use the [body-parser](https://www.npmjs.com/package/body-parser) library - Node.js body parsing middleware.
+
+...
 
 ### Contact
 
