@@ -51,6 +51,47 @@ Let's create a new git repository - run 'git init'
 
 Let's utilize Mocha for testing.  Let's also install node module [supertest](https://www.npmjs.com/package/supertest) so we can have a 'client' to make calls to our app during testing.
 
+Here is an example of our App and associated test
+
+**app.js**
+```
+const express = require('express')
+
+const app = express()
+
+/**
+ * Callback:
+ * @param {object} req The incoming request
+ * @param {object} res The outgoing response
+ */
+app.get('/api', (req, res) => {
+    res.send({ hello: 'World!' })
+})
+
+module.exports = app
+```
+
+**app_test.js**
+```
+const assert = require('assert')
+const request = require('supertest')
+
+const app = require('../app')
+
+describe('hvagGeneriCRUD Express App', () => {
+
+    it('handles a GET request to /api', (done) => {
+        request(app)
+            .get('/api')
+            .end((err, response) => {
+                assert(response.body.hello === 'World!')
+                done()
+            })
+    })
+
+})
+```
+
 
 ### Contact
 
