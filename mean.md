@@ -31,7 +31,7 @@ Excellent!  Mongo is up and running in a Docker container and using the specifie
 
 ### Node.js
 
-We like JavaScript so much that we want to run it outside our browser; yeah [Node.js](https://nodejs.org).  We also like Swift + Kitura but let's get started with Node + Express.
+We like JavaScript so much that we want to run it outside our browser; yeah [Node.js](https://nodejs.org).  We also like Swift + Kitura but let's get started with Node + Express.  Will I ever have time to take a look at Go?
 
 Kitura and Express are [Web Application Frameworks](https://en.wikipedia.org/wiki/Web_framework)
 
@@ -39,7 +39,7 @@ Create a new folder for the Node application and run 'npm init' to configure the
 
 Let's add a few dependencies and create the node_modules folder
 
-run 'npm install --save mocha mongoose express'.
+**run 'npm install --save mocha mongoose express'.**
 
 
 ### Git
@@ -105,7 +105,13 @@ describe('hvagGeneriCRUD Express App', () => {
 
 ### Body-Parser
 
-Express is not great for handling the {body} of a POST request.  For this functionality, we will use the [body-parser](https://www.npmjs.com/package/body-parser) library - Node.js body parsing middleware.
+Express is not great for handling the {body} of a POST request.  For this functionality, we will use the [body-parser](https://www.npmjs.com/package/body-parser) library - Node.js body parsing middleware.  This will add a .body property to the incoming request.
+
+Body-Parser was previously included with Express but is now a separate library.
+
+**run 'npm install --save body-parser**
+
+
 
 ...
 
