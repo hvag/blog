@@ -47,6 +47,11 @@ run 'npm install --save mocha mongoose express'.
 Let's create a new git repository - run 'git init'
 
 
+### Mocha
+
+Let's utilize Mocha for testing.  Let's also install node module [supertest](https://www.npmjs.com/package/supertest) so we can have a 'client' to make calls to our app during testing.
+
+
 ### Contact
 
 [advisor@hvadvisorygroup.com](mailto:advisor@hvadvisorygroup.com)
