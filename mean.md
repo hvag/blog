@@ -71,6 +71,17 @@ app.get('/api', (req, res) => {
 module.exports = app
 ```
 
+**index.html**
+```
+const app = require('./app')
+
+const PORT = process.env.PORT || 3000
+
+app.listen(PORT, () => {
+    console.log('Listening on PORT %s', PORT)
+})
+```
+
 **app_test.js**
 ```
 const assert = require('assert')
