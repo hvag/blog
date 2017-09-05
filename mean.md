@@ -114,7 +114,7 @@ Body-Parser was previously included with Express but is now a separate library.
 
 ### Mongoose
 
-Let's bring Mongoose into play.  Mongoose works with MongoDB, simplifying the modeling of application data.  Here is an example of Mongoose in action (from:[mongoosejs.com](http://mongoosejs.com)
+Let's bring Mongoose into play.  Mongoose works with MongoDB, simplifying the modeling of application data.  Here is an example of Mongoose in action (from: [mongoosejs.com](http://mongoosejs.com))
 ```
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
@@ -132,6 +132,46 @@ kitty.save(function (err) {
 ```
 
 
+## GeoJSON
+MongoDB has built-in support for location based data.  Here is an example of GeoJSON in action (from: [geojson.org](http://geojson.org))
+```
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [125.6, 10.1]
+  },
+  "properties": {
+    "name": "Dinagat Islands"
+  }
+}
+```
+
+We can store location attributes as a sub-document of the primary object, for example hvagNinja.  This answers the question, are there HVAG advisors close by.
+```
+const mongoose = require('mongoose')
+
+const Schema = mongoose.Schema
+
+// Schema is a 'part of' a model - I like to say the 'soul'
+const PointSchema = new Schema ({
+    type: { type: String, default: 'Point' },
+    coordinates: { type: [Number], index: '2dsphere' }
+})
+
+const hvagNinjaSchema = new Schema({
+    email: {
+        type: String,
+        required: [true, 'email is required']
+    },
+    geometry: PointSchema
+})
+
+// Model represents the collection in MongoDB
+const Driver = mongoose.model('driver', DriverSchema)
+
+module.exports = Driver
+```
 
 ...
 
