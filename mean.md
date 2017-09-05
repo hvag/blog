@@ -112,6 +112,26 @@ Body-Parser was previously included with Express but is now a separate library.
 **run 'npm install --save body-parser**
 
 
+### Mongoose
+
+Let's bring Mongoose into play.  Mongoose works with MongoDB, simplifying the modeling of application data.  Here is an example of Mongoose in action (from:[mongoosejs.com](http://mongoosejs.com)
+```
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
+
+var Cat = mongoose.model('Cat', { name: String });
+
+var kitty = new Cat({ name: 'Zildjian' });
+kitty.save(function (err) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('meow');
+  }
+});
+```
+
+
 
 ...
 
