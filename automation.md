@@ -7,7 +7,7 @@ published: true
 
 Let's attempt to create a CI/CD pipeline utilizing Jenkins
 
-Create new GitHub repo
+Create new [GitHub repo](https://github.com/hmashaw/docker-node-jenkins)
 
 Clone repo
 
