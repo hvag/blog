@@ -29,6 +29,6 @@ Create a new Jenkins Project
 
 ### Docker
 
-For review - [Docker Security](https://www.projectatomic.io/blog/2015/08/why-we-dont-let-non-root-users-run-docker-in-centos-fedora-or-rhel/)
+For review - [Why we don't let non-root users run Docker in CentOS, Fedora, or RHEL](https://www.projectatomic.io/blog/2015/08/why-we-dont-let-non-root-users-run-docker-in-centos-fedora-or-rhel/)
 
 There are many Docker plugins available for Jenkins.  We will work with the 'CloudBees Docker Build and Publish' plugin
