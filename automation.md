@@ -15,7 +15,7 @@ Clone repo
 
 ### Node
 
-Create a functionng Node application
+Create a functioning Node application
 
 Commit and push application to repo
 
