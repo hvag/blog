@@ -5,7 +5,7 @@ permalink: /automation/
 published: true
 ---
 
-Jenkins
+Let's attempt to create a CI/CD pipeline utilizing Jenkins
 
 Create new GitHub repo
 
@@ -14,5 +14,3 @@ Clone repo
 Create a functionng Node application
 
 Commit and push application to repo
-
-
