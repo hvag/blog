@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Jenkins
-permalink: /jenkins/
+title: Automation
+permalink: /automation/
 published: true
 ---
 
