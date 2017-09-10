@@ -7,9 +7,13 @@ published: true
 
 Let's attempt to create a CI/CD pipeline utilizing Jenkins
 
+### GitHub
+
 Create new [GitHub repo](https://github.com/hmashaw/docker-node-jenkins)
 
 Clone repo
+
+### Node
 
 Create a functionng Node application
 
