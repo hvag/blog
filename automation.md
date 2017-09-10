@@ -25,3 +25,7 @@ Create a new Jenkins Project
 
 - configure the project to pull code from the Github repo
 - Add a single build step - 'npm install'
+
+
+### Docker
+
