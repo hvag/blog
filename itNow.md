@@ -5,7 +5,7 @@ permalink: /itNow/
 published: true
 ---
 
-What we love right now
+What we like right now
 
 ### Model
  - Microservices - Small reusable components (horizontal scaling)
