@@ -14,7 +14,7 @@ What we love right now
 ### Tools
  - Node.js - Common language across stack
  - Swift - See Node.js
- - Docker - hmm, container.  It works on my computer, it will work on your also
+ - Docker - hmm, container.  It works on my computer, it will work on your also - No more application dependencies
  - Kubernetes - I can control you all, 'cause actually, I just have to control one machine, the kb machine, universal abstraction, nice!  Stop thinking about Java
  - Lambda - Hey, wait a minute, what if I didn't even have to build and orchestrate the containers?  What if I could just launch the app/service?  It would kinda be '**Serverless**' - for me anyway
  
