@@ -33,5 +33,4 @@ For review - [Why we don't let non-root users run Docker in CentOS, Fedora, or R
 
 There are many Docker plugins available for Jenkins.  We will work with the 'CloudBees Docker Build and Publish' plugin.
 
-Replace a the existing build step 'npm install' with a step for 'Docker Build and Publish'
-
+Replace the existing build step 'npm install' with a step for 'Docker Build and Publish'
