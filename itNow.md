@@ -20,7 +20,6 @@ What we love right now
  
 ### Testing
  - Mocha
- - Chai
  
 Let's get started with our 'Hello World' express app
  
