@@ -5,7 +5,7 @@ permalink: /itNow/
 published: true
 ---
 
-## What we liked yesterday
+## What I liked yesterday
 
  - [Windows](/blog/windows)
  - [Linux](/blog/linux)
@@ -17,7 +17,7 @@ published: true
  
 Interesting, looks like a bunch of large monolithic systems/applications
 
-## What we like right now
+## What I like right now
 
 ### Model
  - Microservices - Small reusable components (horizontal scaling)
