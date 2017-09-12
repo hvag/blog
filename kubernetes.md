@@ -19,11 +19,14 @@ Let's take a stab at setting up a Kubernetes cluster
 
 | Item | AWS | GCP |
 | ---- | --- | --- |
-|Setup cluster | kops - Kubernetes Operations | gcloud |
+| Setup cluster | kops - Kubernetes Operations | gcloud |
 
 ### Using kops to start a k8s cluster on AWS
 
 For this exercise, let's use an Ubuntu Workstation - 16.04 LTS
 
   * Install kops - [https://github.com/kubernetes/kops](https://github.com/kubernetes/kops){:target="_blank"}
-
+  
+  * Install AWS CLI - [https://aws.amazon.com/cli/](https://aws.amazon.com/cli){:target="_blank"}
+  
+  * AWS - Configure a IAM user for kops. 
