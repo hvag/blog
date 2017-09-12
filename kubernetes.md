@@ -15,7 +15,7 @@ Kubernetes - I've got a lot of images, I think I need a bit of help managing the
 
 You thought I was a SysAdmin.  Well, I was replaced by a script, sorta.  But, it's all good, k8s is way more interesting
 
-Let's take a stab at setting up a Kebernetes cluster
+Let's take a stab at setting up a Kubernetes cluster
 
 | Item | AWS | GCP |
 | ---- | --- | --- |
