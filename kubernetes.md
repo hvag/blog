@@ -25,9 +25,5 @@ Let's take a stab at setting up a Kebernetes cluster
 
 For this exercise, let's use an Ubuntu Workstation - 16.04 LTS
 
-  * Install kops - https://github.com/kubernetes/kops(https://github.com/kubernetes/kops)
-
-
-
-
+  * Install kops - [https://github.com/kubernetes/kops](https://github.com/kubernetes/kops){:target="_blank"}
 
