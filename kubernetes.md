@@ -11,7 +11,6 @@ Docker - Here are my strong opinions on how you should build containment around 
 
 Image - I will not depend on the host, I will bring all my dependencies with me
 
-Kubernetes - I've got a lot of images, I think I need a bit of help managing them
+Kubernetes - I've got a lot of images, I think I need a bit of help managing them.  Here's my desired state, please enforce it
 
 You thought I was a SysAdmin.  Well, I was replaced by a script, sorta.  But, it's all good, k8s is way more interesting
-
