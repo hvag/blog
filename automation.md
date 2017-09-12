@@ -9,7 +9,7 @@ Let's attempt to create a CI/CD pipeline utilizing Jenkins
 
 ### GitHub
 
-Create new [GitHub repo](https://github.com/hmashaw/docker-node-jenkins)
+Create new [GitHub repo](https://github.com/hmashaw/docker-node-jenkins){:target="_blank"}
 
 Clone repo
 
@@ -29,7 +29,7 @@ Create a new Jenkins Project
 
 ### Docker
 
-For review - [Why we don't let non-root users run Docker in CentOS, Fedora, or RHEL](https://www.projectatomic.io/blog/2015/08/why-we-dont-let-non-root-users-run-docker-in-centos-fedora-or-rhel/)
+For review - [Why we don't let non-root users run Docker in CentOS, Fedora, or RHEL](https://www.projectatomic.io/blog/2015/08/why-we-dont-let-non-root-users-run-docker-in-centos-fedora-or-rhel/){:target="_blank"}
 
 There are many Docker plugins available for Jenkins.  We will work with the 'CloudBees Docker Build and Publish' plugin.
 
