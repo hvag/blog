@@ -25,11 +25,15 @@ Let's take a stab at setting up a Kubernetes cluster
 
 For this exercise, let's use an Ubuntu Workstation - 16.04 LTS
 
+  * Install kubectl - [https://kubernetes.io/docs/tasks/tools/install-kubectl/](https://kubernetes.io/docs/tasks/tools/install-kubectl/){:target="_blank"}
+
   * Install kops - [https://github.com/kubernetes/kops](https://github.com/kubernetes/kops){:target="_blank"}
   
   * Install AWS CLI - [https://aws.amazon.com/cli/](https://aws.amazon.com/cli){:target="_blank"}
   
-  * AWS - Configure a IAM user for kops.  Will attach the following policies:
+On AWS:
+
+  * AWS - Configure a IAM user for kops.  Will attach the following policies (via a group):
   
     * AmazonEC2FullAccess
     * IAMFullAccess
@@ -37,4 +41,8 @@ For this exercise, let's use an Ubuntu Workstation - 16.04 LTS
     * AmazonVPCFullAccess
     * AmazonRoute53FullAccess
     
-    
+  * AWS - Create a S3 bucket to contain kops state
+  
+  * AWS - Configure a kubernetes subdomain Route 53.  We will use **deviceName.kubernetes.domainName.com**
+  
+  
