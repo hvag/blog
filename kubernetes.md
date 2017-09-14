@@ -29,4 +29,12 @@ For this exercise, let's use an Ubuntu Workstation - 16.04 LTS
   
   * Install AWS CLI - [https://aws.amazon.com/cli/](https://aws.amazon.com/cli){:target="_blank"}
   
-  * AWS - Configure a IAM user for kops. 
+  * AWS - Configure a IAM user for kops.  Will attach the following policies:
+  
+    * AmazonEC2FullAccess
+    * IAMFullAccess
+    * AmazonS3FullAccess
+    * AmazonVPCFullAccess
+    * AmazonRoute53FullAccess
+    
+    
