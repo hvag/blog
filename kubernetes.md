@@ -21,7 +21,7 @@ Let's take a stab at setting up a Kubernetes cluster
 | ---- | --- | --- |
 | Setup cluster | kops - Kubernetes Operations | gcloud |
 
-### Using kops to start a k8s cluster on AWS
+### Configuring tools to start a k8s cluster on AWS
 
 For this exercise, let's use an Ubuntu Workstation - 16.04 LTS
 
@@ -45,6 +45,12 @@ On AWS:
     
   * Create a S3 bucket to contain kops state
   
-  * Configure a kubernetes subdomain Route 53.  We will use **deviceName.kubernetes.domainName.com**
+  * Configure a kubernetes subdomain Route 53.  We will use **kubernetes.domainName.com**
+  
+### Using kops to create the cluster
+
+To preview the changes to be made on AWS:
+
+```kops create cluster --name=<clusterName> --state=s3://<bucket-name> --zones=us-east-1a --node-count=2 --node-size=t2.micro --master-size=t2.micro --dns-zone=kubernetes.<domain>.com --ssh-public-key=<publicKey>```
   
   
