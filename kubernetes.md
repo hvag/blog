@@ -31,9 +31,11 @@ For this exercise, let's use an Ubuntu Workstation - 16.04 LTS
   
   * Install AWS CLI - [https://aws.amazon.com/cli/](https://aws.amazon.com/cli){:target="_blank"}
   
+  * Generate ssh keys to be used when loggin into the cluster - will utilize **ssh-keygen**
+  
 On AWS:
 
-  * AWS - Configure a IAM user for kops.  Will attach the following policies (via a group):
+  * Configure a IAM user for kops.  Will attach the following policies (via a group):
   
     * AmazonEC2FullAccess
     * IAMFullAccess
@@ -41,8 +43,8 @@ On AWS:
     * AmazonVPCFullAccess
     * AmazonRoute53FullAccess
     
-  * AWS - Create a S3 bucket to contain kops state
+  * Create a S3 bucket to contain kops state
   
-  * AWS - Configure a kubernetes subdomain Route 53.  We will use **deviceName.kubernetes.domainName.com**
+  * Configure a kubernetes subdomain Route 53.  We will use **deviceName.kubernetes.domainName.com**
   
   
