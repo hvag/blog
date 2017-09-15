@@ -45,12 +45,36 @@ On AWS:
     
   * Create a S3 bucket to contain kops state
   
-  * Configure a kubernetes subdomain Route 53.  We will use **kubernetes.domainName.com**
+  * Configure a kubernetes subdomain via Route 53.  We will use **kubernetes.domainName.com**
   
 ### Using kops to create the cluster
 
 To preview the changes to be made on AWS:
 
 ```kops create cluster --name=<clusterName> --state=s3://<bucket-name> --zones=us-east-1a --node-count=2 --node-size=t2.micro --master-size=t2.micro --dns-zone=kubernetes.<domain>.com --ssh-public-key=<publicKey>```
+
+Finally configure your cluster with: ```kops update cluster <clusterName> --yes```
+
+To check the status of the nodes: ```kubectl get nodes```
+
+And, to eventually delete the cluster: ```kops delete cluster --name=<clusterName>```
+
+
+### Kebernetes
+
+  * node - machine running kubelet
+  * pod - n containers (logical unit running on a node)
+  * scheduler - finds best fit (node) for pods
+  * replication controller - templates for desired state
+  * service - vip for pods (think load balancer)
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+
