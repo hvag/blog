@@ -65,7 +65,7 @@ And, to eventually delete the cluster: ```kops delete cluster --name=<clusterNam
   * node - machine running kubelet
   * pod - n containers (logical unit running on a node)
   * scheduler - finds best fit (node) for pods
-  * replication controller - templates for desired state
+  * replication controller/deployment - templates for desired state
   * service - vip for pods (think load balancer)
   
   
