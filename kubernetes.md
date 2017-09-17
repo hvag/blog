@@ -53,6 +53,11 @@ To preview the changes to be made on AWS:
 
 ```kops create cluster --name=<clusterName> --state=s3://<bucket-name> --zones=us-east-1a --node-count=2 --node-size=t2.micro --master-size=t2.micro --dns-zone=kubernetes.<domain>.com --ssh-public-key=<publicKey>```
 
+#### Interesting Options
+  * Build a terraform manifest with ```--target=terraform``` then use **terraform apply** to apply the configuration
+  
+  * Build a private network topology with ```--topology private```
+
 Finally configure your cluster with: ```kops update cluster <clusterName> --yes```
 
 To check the status of the nodes: ```kubectl get nodes```
