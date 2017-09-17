@@ -15,8 +15,6 @@ published: true
  - VMware
  
  
-Interesting, looks like a bunch of large monolithic systems/applications
-
 ## What I like right now
 
 ### Model
