@@ -5,7 +5,7 @@ permalink: /itNow/
 published: true
 ---
 
-## What I liked yesterday
+## What we liked yesterday
 
  - [Windows](/blog/windows)
  - [Linux](/blog/linux)
@@ -15,7 +15,7 @@ published: true
  - VMware
  
  
-## What I like right now
+## What we like right now
 
 ### Model
  - Microservices - Small reusable components (horizontal scaling)
