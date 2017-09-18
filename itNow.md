@@ -100,3 +100,38 @@ Let's see how much we can 'control' from our package.json
   }
 }
 ```
+
+### Dockerfile
+
+Sample Dockerfile
+```
+# Base image
+FROM node:6-alpine
+
+# Create /app
+WORKDIR /app
+
+# Add files in 'this' directory to /app
+ADD . /app
+
+# Install node dependencies
+RUN npm install
+
+# Use port
+EXPOSE 3000
+
+# Launch 'npm start' on running container
+CMD npm start
+```
+
+Build the docker image: ```docker build .```
+
+Test the image: ```docker run -p 3000:3000 -it <imageID>```
+
+Connect to running docker container: ```docker exec -it <containerID> /bin/sh```
+
+
+
+
+
+
