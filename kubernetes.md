@@ -118,7 +118,18 @@ Use kubectl to create the pod and service on the cluster
 
 We should now be able to reach the node application via the DNS name for the load balancer created in AWS
 
+We can also create an Alias record in Route 53 which targets the load balancer
 
+**Traffic Flow**
+  * DNS Address
+    * Route 53 -> Load Balancer
+      * Load balancer redirects port 80 traffic to one of the k8s cluster nodes
+        * Node accepts traffic on instance port and redirects to pod
+          * Pod is running node/express app which responds with message
+
+**Teardown**
+```kubectl delete -f hvagNinjas-service.yml```
+```kubectl delete -f hvagNinjas-pod.yml```
 
 
 
