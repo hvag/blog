@@ -33,7 +33,7 @@ published: true
  
 Let's get started with our 'Hello World' express app
  
-### Express App
+### <a name='express'></a>Express App
  
 ```
 const os = require("os")
@@ -130,7 +130,11 @@ Test the image: ```docker run -p 3000:3000 -it <imageID>```
 
 Connect to running docker container: ```docker exec -it <containerID> /bin/sh```
 
+Tag the docker image: ```docker tag <imageID> <docker-login>/<imageName>:<tag>```
 
+Login to Docker Hub: ```docker login```
+
+Push image to Docker Hub: ```docker push
 
 
 
