@@ -113,8 +113,10 @@ spec:
 ```
 
 Use kubectl to create the pod and service on the cluster
-```kubectl create -f hvagNinjas-pod.yml```
-```kubectl create -f hvagNinjas-service.yml```
+```
+kubectl create -f hvagNinjas-pod.yml
+kubectl create -f hvagNinjas-service.yml
+```
 
 We should now be able to reach the node application via the DNS name for the load balancer created in AWS
 
@@ -128,8 +130,10 @@ We can also create an Alias record in Route 53 which targets the load balancer
           * Pod is running node/express app which responds with message
 
 **Teardown**
-```kubectl delete -f hvagNinjas-service.yml```
-```kubectl delete -f hvagNinjas-pod.yml```
+```
+kubectl delete -f hvagNinjas-service.yml
+kubectl delete -f hvagNinjas-pod.yml
+```
 
 
 
