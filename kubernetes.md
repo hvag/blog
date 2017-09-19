@@ -79,4 +79,54 @@ Let's push our [docker image](/blog/itNow#express) to Docker Hub to make it avai
 
 ### Launching container (app) on Kubernetes
 
+Create a pod definition
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hvag-ninjas.hvag.com
+  labels:
+    app: hvag-ninjas
+spec:
+  containers:
+  - name: hvag-ninjas
+    image: markshaw/hvag_ninjas_express_mongo
+    ports:
+    - name: nodejs-port
+      containerPort: 3000
+```
+
+Create a service definition
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: hvag-ninjas-service
+spec:
+  ports:
+  - port: 80
+    targetPort: nodejs-port
+    protocol: TCP
+  selector:
+    app: hvag-ninjas
+  type: LoadBalancer
+```
+
+Use kubectl to create the pod and service on the cluster
+```kubectl create -f hvagNinjas-pod.yml```
+```kubectl create -f hvagNinjas-service.yml```
+
+We should now be able to reach the node application via the DNS name for the load balancer created in AWS
+
+
+
+
+
+
+
+
+
+
+
+
 
