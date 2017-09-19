@@ -58,7 +58,7 @@ To preview the changes to be made on AWS:
 
 Finally configure your cluster with: ```kops update cluster <clusterName> --yes```
 
-To check the status of the nodes: ```kubectl get nodes```
+To validate cluster components: ```kops validate cluster```
 
 And, to eventually delete the cluster: ```kops delete cluster --name=<clusterName>```
 
