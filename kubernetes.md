@@ -66,11 +66,13 @@ And, to eventually delete the cluster: ```kops delete cluster --name=<clusterNam
 ### Kebernetes
 
   * node - machine running kubelet
+  * kubelet - node agent running on each node - I see job, I run job
+  * kube-proxy - node network proxy
   * pod - n containers (logical unit running on a node)
+  * service - vip for pods (think load balancer)
   * scheduler - finds best fit (node) for pods
   * replication controller/deployment - templates for desired state
-  * service - vip for pods (think load balancer)
-  
+    
   
 ### Docker Hub
 
@@ -134,14 +136,3 @@ We can also create an Alias record in Route 53 which targets the load balancer
 kubectl delete -f hvagNinjas-service.yml
 kubectl delete -f hvagNinjas-pod.yml
 ```
-
-
-
-
-
-
-
-
-
-
-
