@@ -128,7 +128,7 @@ We can also create an Alias record in Route 53 which targets the load balancer
   * DNS Address
     * Route 53 -> Load Balancer
       * Load balancer redirects port 80 traffic to one of the k8s cluster nodes
-        * Node accepts traffic on instance port and redirects to pod
+        * Node accepts traffic on instance port (NodePort) and redirects to pod
           * Pod is running node/express app which responds with message
 
 **Teardown**
@@ -153,6 +153,7 @@ metadata:
   name: hvag-ninjas-deployment
 spec:
   replicas: 3
+  revisionHistoryLimit: 10
   template:
     metadata:
       labels:
@@ -166,11 +167,65 @@ spec:
           containerPort: 3000
 ```
 
+Create/Run the Deployment
+
+```
+kubectl create -f hvagNinjas-deployment.yml --record
+```
+
+We use the --record option to keep additional historical info of the changes to the Deployment over time
+
 Let's "expose" the deployment, making it visible on the network
 
-```kubectl expose deployment hvag-ninjas-deployment --port=80 --target-port=nodejs-port --name hvag-ninjas-service --type=LoadBalancer```
+```
+kubectl expose deployment hvag-ninjas-deployment --port=80 --target-port=nodejs-port --name hvag-ninjas-service --type=LoadBalancer
+```
 
-Now, the cool thing here, is that this is the same as previously running ```kubectl create -f hvagNinjas-service.yml```   Why?  Because in the end, it's all a call to the Kubernetes API
+This is the same as previously running 
+```
+kubectl create -f hvagNinjas-service.yml
+```
+Why?  Because in the end, it's all a call to the Kubernetes API
+
+#### Update Deployment Image
+
+Let's update the image being used by our deployment to a new version
+
+```kubectl set image deployment hvag-ninjas-deployment hvag-ninjas-container=markshaw/hvag-ninjas-express-mongo:2```
+
+That was easy!
+
+You can view the history of your deployment 
+```
+kubectl rollout history deployment hvag-ninjas-deployment
+```
+
+It's also easy to 'rollback' to the previous deployment.  Let's undo what we just did
+
+```kubectl rollout undo deployment hvag-ninjas-deployment```
+
+#### Scaling Up/Down
+
+Let's increase the number of replicas to 4
+
+```
+kubectl scale deployment hvag-ninjas-deployment --replicas=4
+```
+
+Perfroming 'kubectl get pods' will show the increased POD count
+
+```
+NAME                                      READY     STATUS    RESTARTS   AGE
+hvag-ninjas-deployment-3218787200-bjwkj   1/1       Running   0          6m
+hvag-ninjas-deployment-3218787200-brs2x   1/1       Running   0          6m
+hvag-ninjas-deployment-3218787200-v6t4w   1/1       Running   0          6m
+hvag-ninjas-deployment-3218787200-w8lgd   1/1       Running   0          43s
+```
+
+Note that throughout this exercise the service has been available; from a client perspective, there was no downtime.
+
+
+
 
 
 
