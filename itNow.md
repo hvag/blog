@@ -136,4 +136,4 @@ Tag the docker image: ```docker tag <imageID> <docker-login>/<imageName>:<tag>``
 
 Login to Docker Hub: ```docker login```
 
-Push image to Docker Hub: ```docker push```
+Push image to Docker Hub: ```docker push <imageName>:<tag>```
