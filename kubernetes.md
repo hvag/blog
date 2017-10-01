@@ -140,6 +140,44 @@ kubectl delete -f hvagNinjas-pod.yml
 
 ### Deployment
 
-Let's revisit the launces above utilizing a **Deployment**
+Let's revisit the launch above utilizing a **Deployment**
 
 With the Deployment, we will define the desired state of our application and depend on Kubernetes to maintain that desired state within the cluster
+
+We are running the same image as above but have requested that the cluster maintain 3 running replicas
+
+```
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hvag-ninjas-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: hvag-ninjas
+    spec:
+      containers:
+      - name: hvag-ninjas-container
+        image: markshaw/hvag-ninjas-express-mongo:1
+        ports:
+        - name: nodejs-port
+          containerPort: 3000
+```
+
+Let's "expose" the deployment, making it visible on the network
+
+```kubectl expose deployment hvag-ninjas-deployment --port=80 --target-port=nodejs-port --name hvag-ninjas-service --type=LoadBalancer```
+
+Now, the cool thing here, is that this is the same as previously running ```kubectl create -f hvagNinjas-service.yml```   Why?  Because in the end, it's all a call to the Kubernetes API
+
+
+
+
+
+
+
+
+
+
