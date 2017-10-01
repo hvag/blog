@@ -92,7 +92,7 @@ metadata:
 spec:
   containers:
   - name: hvag-ninjas
-    image: markshaw/hvag_ninjas_express_mongo
+    image: markshaw/hvag-ninjas-express-mongo:1
     ports:
     - name: nodejs-port
       containerPort: 3000
@@ -143,13 +143,3 @@ kubectl delete -f hvagNinjas-pod.yml
 Let's revisit the launces above utilizing a **Deployment**
 
 With the Deployment, we will define the desired state of our application and depend on Kubernetes to maintain that desired state within the cluster
-
-
-
-
-
-
-
-
-
-
