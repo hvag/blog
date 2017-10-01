@@ -192,7 +192,9 @@ Why?  Because in the end, it's all a call to the Kubernetes API
 
 Let's update the image being used by our deployment to a new version
 
-```kubectl set image deployment hvag-ninjas-deployment hvag-ninjas-container=markshaw/hvag-ninjas-express-mongo:2```
+```
+kubectl set image deployment hvag-ninjas-deployment hvag-ninjas-container=markshaw/hvag-ninjas-express-mongo:2
+```
 
 That was easy!
 
@@ -203,7 +205,9 @@ kubectl rollout history deployment hvag-ninjas-deployment
 
 It's also easy to 'rollback' to the previous deployment.  Let's undo what we just did
 
-```kubectl rollout undo deployment hvag-ninjas-deployment```
+```
+kubectl rollout undo deployment hvag-ninjas-deployment
+```
 
 You are able to rollback to a specific prior revision via --to-revision=#
 
@@ -229,8 +233,38 @@ hvag-ninjas-deployment-3218787200-w8lgd   1/1       Running   0          43s
 Note that throughout this exercise the service has been available; from a client perspective, there was no downtime.
 
 
+#### Health Check
 
+We can add a health check to our Deployment.  This will perform a HTTP GET to the application running in the containers in the pod.  Kubernetes will terminate the pod and relaunch if there is an issue with the application
 
+livenessProbe (health check)
+
+```
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hvag-ninjas-deployment
+spec:
+  replicas: 3
+  revisionHistoryLimit: 10
+  template:
+    metadata:
+      labels:
+        app: hvag-ninjas
+    spec:
+      containers:
+      - name: hvag-ninjas-container
+        image: markshaw/hvag-ninjas-express-mongo:1
+        livenessProbe:
+          httpGet:
+            path: /api
+            port: nodejs-port
+          initialDelaySeconds: 15
+          timeoutSeconds: 30
+        ports:
+        - name: nodejs-port
+          containerPort: 3000
+```
 
 
 
