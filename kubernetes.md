@@ -14,10 +14,11 @@ Image - I will not depend on the host, I will bring all my dependencies with me
 Kubernetes - I've got a lot of images, I think I need a bit of help managing them.  Here's my desired state, please enforce it
 
 Let's take a stab at setting up a Kubernetes cluster
-
-| Item | AWS | GCP |
-| ---- | --- | --- |
-| Setup cluster | kops - Kubernetes Operations | gcloud |
+```
+Item          | AWS                          | GCP
+----          | ---                          | ---
+Setup cluster | kops - Kubernetes Operations | gcloud
+```
 
 ### Configuring tools to start a k8s cluster on AWS
 
@@ -203,6 +204,9 @@ kubectl rollout history deployment hvag-ninjas-deployment
 It's also easy to 'rollback' to the previous deployment.  Let's undo what we just did
 
 ```kubectl rollout undo deployment hvag-ninjas-deployment```
+
+You are able to rollback to a specific prior revision via --to-revision=#
+
 
 #### Scaling Up/Down
 
