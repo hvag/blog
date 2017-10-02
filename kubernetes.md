@@ -268,11 +268,11 @@ spec:
 
 ### Secrets
 
-Our application utilizes a MongoDB back-end.  Let's attemp to utilize a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret){:target="_blank"} to store our DB login credentials
+Our application utilizes a MongoDB back-end.  Let's attempt to utilize a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret){:target="_blank"} to store our DB login credentials
 
 Time for a [running list of security concerns and mitigation steps](/blog/security#kubernetes)
 
-Once the "Secret" object has been created, it can be referenced by the PODS.
+Once the "Secret" object has been created, it can be referenced by the PODS.  We will utilize the option for using Secrets as environment variables within the containers
 
 Create a secret definition
 ```
@@ -328,6 +328,19 @@ spec:
 Create the Secret
 ```
 kubectl create -f hvagNinjas-secret.yml
+```
+
+
+Create the Deployment
+```
+kubectl create -f hvagNinjas-deployment.yml
+```
+
+If you run 'kubectl get pod <pod-name>' you will see that the environment variables have been set
+```
+Environment:
+      MONGODB_USERNAME:	<set to the key 'username' in secret 'mongodb-secrets'>	Optional: false
+      MONGODB_PASSWORD:	<set to the key 'password' in secret 'mongodb-secrets'>	Optional: false
 ```
 
 
