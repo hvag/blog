@@ -336,7 +336,7 @@ Create the Deployment
 kubectl create -f hvagNinjas-deployment.yml
 ```
 
-If you run 'kubectl get pod <pod-name>' you will see that the environment variables have been set
+If you run 'kubectl get pod pod-name' you will see that the environment variables have been set
 ```
 Environment:
       MONGODB_USERNAME:	<set to the key 'username' in secret 'mongodb-secrets'>	Optional: false
