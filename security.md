@@ -22,3 +22,6 @@ Let's start collecting items for a possible security policy
 ## <a name='kubernetes'></a>Kubernetes
 
 ### Secrets
+
+  * On the API server, the secret data is store as plaintext in ETCD
+  * The secret data is encoded as base64 - This is **NOT ENCRYPTION**
