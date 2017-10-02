@@ -17,3 +17,8 @@ Let's start collecting items for a possible security policy
 4. Devices with public facing interfaces utilize two-factor authentication
 
 5. System events will be logged
+
+
+## Kubernetes
+
+### Secrets
