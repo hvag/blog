@@ -274,6 +274,80 @@ Time for a [running list of security concerns and mitigation steps](/blog/securi
 
 Once the "Secret" object has been created, it can be referenced by the PODS.
 
+Create a secret definition
+```
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mongodb-secrets
+type: Opaque
+data:
+  username: <uname here - base64>
+  password: <pwd here - base64>
+```
+
+Modify the Deployment definition to reference the Secret (add env:)
+```
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hvag-ninjas-deployment
+spec:
+  replicas: 3
+  revisionHistoryLimit: 10
+  template:
+    metadata:
+      labels:
+        app: hvag-ninjas
+    spec:
+      containers:
+      - name: hvag-ninjas-container
+        image: markshaw/hvag-ninjas-express-mongo:1
+        livenessProbe:
+          httpGet:
+            path: /api
+            port: nodejs-port
+          initialDelaySeconds: 15
+          timeoutSeconds: 30
+        ports:
+        - name: nodejs-port
+          containerPort: 3000
+        env:
+        - name: MONGODB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secrets
+              key: username
+        - name: MONGODB: MONGODB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secrets
+              key: password
+```
+
+Create the Secret
+```
+kubectl create -f hvagNinjas-secret.yml
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
