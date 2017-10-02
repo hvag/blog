@@ -1,5 +1,5 @@
 ---
-layout: page-disqus
+layout: page
 title: Security and Governance
 permalink: /security/
 published: true

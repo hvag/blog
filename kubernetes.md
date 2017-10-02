@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page-disqus
 title: Kubernetes
 permalink: /kubernetes/
 published: true

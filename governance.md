@@ -1,5 +1,5 @@
 ---
-layout: page-disqus
+layout: page
 title: Governance
 permalink: /governance/
 published: true

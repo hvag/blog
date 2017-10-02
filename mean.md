@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page-disqus
 title: MEAN
 permalink: /mean/
 published: true

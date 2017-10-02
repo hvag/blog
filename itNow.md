@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page-disqus
 title: itNow
 permalink: /itNow/
 published: true
