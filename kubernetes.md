@@ -268,8 +268,20 @@ spec:
 
 ### Secrets
 
-Our application utilizes a MongoDB back-end.  Let's attemp to utilize a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret){:target="_blank"} to securely store our DB login credentials
+Our application utilizes a MongoDB back-end.  Let's attemp to utilize a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret){:target="_blank"} to store our DB login credentials
 
 Time for a [running list of security concerns and mitigation steps](/blog/security#kubernetes)
 
-Once the Secret Object has been created, it can be referenced by the PODS.
+Once the "Secret" object has been created, it can be referenced by the PODS.
+
+
+
+
+
+
+
+
+
+
+
+
