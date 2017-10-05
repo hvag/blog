@@ -66,12 +66,18 @@ And, to eventually delete the cluster: ```kops delete cluster --name=<clusterNam
 
 ### Kebernetes
 
+A typical Master + Worker Configuration
+
+  * Master Server(s) - Manages the cluster
+    * Etcd - key value store containing tbe cluster configuration
+    * API server - RESTful interface
+    * Scheduler - finds best fit (node) for pods
+    * Controller Manager - cluster task manager
   * node - machine running kubelet
-  * kubelet - node agent running on each node - I see job, I run job
-  * kube-proxy - node network proxy - manages iptables (firewall) which forwards traffic to pods
+    * kubelet - node agent running on each node - I see job, I run job
+    * kube-proxy - node network proxy - manages iptables (firewall) which forwards traffic to pods
   * pod - n containers (logical unit running on a node)
   * service - vip for pods (think load balancer) - forwards traffic to iptables
-  * scheduler - finds best fit (node) for pods
   * replication controller/replica set/deployment - templates for desired state
     
   
