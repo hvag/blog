@@ -74,8 +74,8 @@ A typical Master + Worker Configuration
     * Scheduler - finds best fit (node) for pods
     * Controller Manager - cluster task manager
   * node - machine running kubelet
-    * kubelet - node agent running on each node - I see job, I run job
-    * kube-proxy - node network proxy - manages iptables (firewall) which forwards traffic to pods
+    * kubelet - node agent running on each node - I see job, I run job - Interacts with Docker
+    * kube-proxy - node network proxy - manages iptables (FW) which forwards traffic to pods - NAT
   * pod - n containers (logical unit running on a node)
   * service - vip for pods (think load balancer) - forwards traffic to iptables
   * replication controller/replica set/deployment - templates for desired state
