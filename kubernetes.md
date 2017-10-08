@@ -349,32 +349,56 @@ Environment:
       MONGODB_PASSWORD:	<set to the key 'password' in secret 'mongodb-secrets'>	Optional: false
 ```
 
+
+### Volumes
+
+Let's create an AWS EBS volume and attempt to mount it to a container running in our cluster.  Create the volume in the same zone as the cluster
+
+```
+aws ec2 create-volume --size 1 --region us-east-1 --availability-zone us-east-1a --volume-type gp2
+```
+
+Create a deployment that utilizes the created volume via it's volumeID
+
+hvagNinjas-voltest.yml
+```
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hvag-voltest-deployment
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  template:
+    metadata:
+      labels:
+        app: hvag-voltest
+    spec:
+      containers:
+      - name: hvag-voltest-container
+        image: markshaw/hvag-ninjas-express-mongo:1
+        livenessProbe:
+          httpGet:
+            path: /api
+            port: nodejs-port
+          initialDelaySeconds: 15
+          timeoutSeconds: 30
+        ports:
+        - name: nodejs-port
+          containerPort: 3000
+        volumeMounts:
+        - mountPath: /test-volume
+          name: test-volume
+      volumes:
+      - name: test-volume
+        awsElasticBlockStore:
+          volumeID: vol-00895ff49f722b752
+```
+
+Once the container is up, you should be able to connect and see the mounted volume
+```
+kubectl exec hvag-voltest-deployment-3580180729-0tvn8 -it /bin/s
+```
+
+
 ...
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
