@@ -69,13 +69,14 @@ And, to eventually delete the cluster: ```kops delete cluster --name=<clusterNam
 A typical Master + Worker Configuration
 
   * Master Server(s) - Manages the cluster
-    * Etcd - key value store containing tbe cluster configuration
-    * API server - RESTful interface
+    * API server - RESTful interface - communicates with kublets no nodes
     * Scheduler - finds best fit (node) for pods
     * Controller Manager - cluster task manager
   * node - machine running kubelet
     * kubelet - node agent running on each node - I see job, I run job - Interacts with Docker
     * kube-proxy - node network proxy - manages iptables (FW) which forwards traffic to pods - NAT
+  * Etcd - distributed key value datastore containing tbe cluster configuration (Run on Master or External)
+  * kubectl - CLI for interacting with API via REST interface
   * pod - n containers (logical unit running on a node)
   * service - vip for pods (think load balancer) - forwards traffic to iptables
   * replication controller/replica set/deployment - templates for desired state
@@ -399,6 +400,18 @@ Once the container is up, you should be able to connect and see the mounted volu
 ```
 kubectl exec hvag-voltest-deployment-3580180729-0tvn8 -it /bin/s
 ```
+
+### Node Management
+
+Prior to terminating a node or to perform maintenance, is should be "drained".  Use the following command
+```
+kubectl drain <nodename> --grace-period=###
+```
+
+
+
+
+
 
 
 ...
